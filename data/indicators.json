@@ -1,0 +1,21 @@
+{
+  "root_indicators": [
+    "/system/xbin/su",
+    "/system/bin/su",
+    "magisk",
+    "busybox"
+  ],
+  "emulator_indicators": [
+    "goldfish",
+    "qemu",
+    "genymotion",
+    "sdk_gphone"
+  ],
+  "benign_extensions": [
+    ".jpg",
+    ".png",
+    ".mp4",
+    ".json"
+  ]
+}
+

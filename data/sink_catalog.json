@@ -1,0 +1,62 @@
+{
+  "environment": {
+    "description": "Root and Emulator Detection",
+    "sinks": [
+      {
+        "name": "File.exists",
+        "layer": "Java",
+        "risk": "Environment Verification"
+      },
+      {
+        "name": "getSystemProperty",
+        "layer": "Java",
+        "risk": "Environment Verification"
+      },
+      {
+        "name": "/system/xbin/su",
+        "layer": "Java",
+        "risk": "Root Detection"
+      },
+      {
+        "name": "Runtime.exec",
+        "layer": "Java",
+        "risk": "Root Detection"
+      }
+    ]
+  },
+  "network": {
+    "description": "SSL Pinning and Traffic Safety",
+    "sinks": [
+      {
+        "name": "CertificatePinner",
+        "layer": "Java",
+        "risk": "Secure Communication"
+      },
+      {
+        "name": "checkServerTrusted",
+        "layer": "Java",
+        "risk": "Secure Communication"
+      },
+      {
+        "name": "OkHttpClient",
+        "layer": "Java",
+        "risk": "Secure Communication"
+      }
+    ]
+  },
+  "analysis": {
+    "description": "Anti-Analysis and Debugging",
+    "sinks": [
+      {
+        "name": "isDebuggerConnected",
+        "layer": "Java",
+        "risk": "Anti-Debugging"
+      },
+      {
+        "name": "Log.d",
+        "layer": "Java",
+        "risk": "Information Leak"
+      }
+    ]
+  }
+}
