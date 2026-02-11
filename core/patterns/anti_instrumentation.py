@@ -1,29 +1,23 @@
 from core.patterns.base import BaseProtectionPattern
-from core.patterns.models import ProtectionCandidate
+from core.analyzer.models import ProtectionCandidate
 
 class AntiDebugPattern(BaseProtectionPattern):
     PATTERN_NAME = "Anti-Debugging"
-    IMPACT_HINT = "Blocks dynamic instrumentation"
+    IMPACT_HINT = "Blocks dynamic instrumentation / Debugging"
 
     def match(self, sink_hit, context=None):
-        # Memastikan hit ini relevan dengan risiko Anti-Debugging
-        if sink_hit.sink.get("risk") == "Anti-Debugging":
+        # Sesuaikan dengan risk di sink_catalog.json
+        if sink_hit.sink.get("risk") in ["Anti-Debugging", "Anti-Debugging Logic"]:
             return ProtectionCandidate(
                 pattern_type=self.PATTERN_NAME,
-                sink=sink_hit.sink,
-                class_name=sink_hit.class_name,
-                method_name=sink_hit.method_name,
-                line_number=sink_hit.line_number,
-                evidence={
-                    "native": sink_hit.sink.get("layer") == "Native",
-                    "conditional": getattr(sink_hit, 'conditional', False),
-                    "snippet": getattr(sink_hit, 'context_snippet', [])
+                location={
+                    "class": sink_hit.class_name,
+                    "method": sink_hit.method_name,
+                    "line": sink_hit.line_number,
+                    "layer": getattr(sink_hit, 'layer', 'Java')
                 },
+                evidence=f"Debugger detection check: {sink_hit.sink.get('name')}",
                 impact_hint=self.IMPACT_HINT,
-                confidence_hint={
-                    "string": 0,
-                    "api": 1,
-                    "control_flow": 1 if getattr(sink_hit, 'conditional', False) else 0
-                }
+                confidence_signal=sink_hit
             )
         return None

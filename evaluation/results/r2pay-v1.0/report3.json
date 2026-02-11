@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "app_name": "r2pay-v1.0.apk",
+    "total_findings": 2,
+    "backend_used": "auto",
+    "framework_context": true
+  },
+  "findings": [
+    {
+      "protection_type": "Root / Emulator Detection",
+      "taxonomy": {
+        "purpose": "Root / Emulator Detection",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Detects environment manipulation (Root/Emulator)"
+      },
+      "location": {
+        "class": "\u266b.\u1d64",
+        "method": "\u00f8()Z",
+        "line": 4,
+        "layer": "Java",
+        "full_signature": "\u266b.\u1d64->\u00f8()Z"
+      },
+      "semantic_label": "Environment Integrity Check via Filesystem & Runtime Probing",
+      "confidence_score": 0.4,
+      "evidence_snippet": [
+        "L0001     .class public L\u266b/\u1d64;",
+        "L0002     .super Ljava/lang/Object;",
+        "L0003     .source \"SourceFile\"",
+        "L0004 [*] ",
+        "L0005     ",
+        "L0006     # instance fields",
+        "L0007     .field public final \u03b8:Landroid/content/Context;",
+        "L0008     ",
+        "L0009     .field public \u03b8:Z"
+      ]
+    },
+    {
+      "protection_type": "Root / Emulator Detection",
+      "taxonomy": {
+        "purpose": "Root / Emulator Detection",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Detects environment manipulation (Root/Emulator)"
+      },
+      "location": {
+        "class": "\u266b.\u1d58",
+        "method": "<clinit>()V",
+        "line": 16,
+        "layer": "Java",
+        "full_signature": "\u266b.\u1d58-><clinit>()V"
+      },
+      "semantic_label": "Environment Integrity Check via Filesystem & Runtime Probing",
+      "confidence_score": 0.4,
+      "evidence_snippet": [
+        "L0011     .field public static final \u03a6:[Ljava/lang/String;",
+        "L0012     ",
+        "L0013     .field public static final \u03b8:[Ljava/lang/String;",
+        "L0014     ",
+        "L0015     ",
+        "L0016 [*] # direct methods",
+        "L0017     .method public static constructor <clinit>()V",
+        "L0018     .locals 24",
+        "L0019     ",
+        "L0020     .line 18",
+        "L0021     const-string v0, \"com.noshufou.android.su\""
+      ]
+    }
+  ],
+  "grouped_findings": {
+    "Root / Emulator Detection|Environment Integrity Check via Filesystem & Runtime Probing|Control-flow-based": {
+      "protection_type": "Root / Emulator Detection",
+      "semantic_label": "Environment Integrity Check via Filesystem & Runtime Probing",
+      "taxonomy": {
+        "purpose": "Root / Emulator Detection",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Detects environment manipulation (Root/Emulator)"
+      },
+      "max_score": 0.4,
+      "locations": [
+        {
+          "class": "\u266b.\u1d64",
+          "method": "\u00f8()Z",
+          "line": 4,
+          "layer": "Java",
+          "full_signature": "\u266b.\u1d64->\u00f8()Z"
+        },
+        {
+          "class": "\u266b.\u1d58",
+          "method": "<clinit>()V",
+          "line": 16,
+          "layer": "Java",
+          "full_signature": "\u266b.\u1d58-><clinit>()V"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "app_name": "UnCrackable-Level2.apk",
+    "total_findings": 1,
+    "backend_used": "auto",
+    "framework_context": true
+  },
+  "findings": [
+    {
+      "protection_type": "Anti-Debugging",
+      "taxonomy": {
+        "purpose": "Anti-Debugging",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Blocks dynamic instrumentation / Debugging"
+      },
+      "location": {
+        "class": "sg.vantagepoint.uncrackable2.MainActivity$2",
+        "method": "a([Ljava/lang/Void;)Ljava/lang/String;",
+        "line": 4,
+        "layer": "Java",
+        "full_signature": "sg.vantagepoint.uncrackable2.MainActivity$2->a([Ljava/lang/Void;)Ljava/lang/String;"
+      },
+      "semantic_label": "Runtime Debugger Attachment Prevention",
+      "confidence_score": 0.4,
+      "evidence_snippet": [
+        "L0001     .class Lsg/vantagepoint/uncrackable2/MainActivity$2;",
+        "L0002     .super Landroid/os/AsyncTask;",
+        "L0003     ",
+        "L0004 [*] ",
+        "L0005     # annotations",
+        "L0006     .annotation system Ldalvik/annotation/EnclosingMethod;",
+        "L0007     value = Lsg/vantagepoint/uncrackable2/MainActivity;->onCreate(Landroid/os/Bundle;)V",
+        "L0008     .end annotation",
+        "L0009     "
+      ]
+    }
+  ],
+  "grouped_findings": {
+    "Anti-Debugging|Runtime Debugger Attachment Prevention|Control-flow-based": {
+      "protection_type": "Anti-Debugging",
+      "semantic_label": "Runtime Debugger Attachment Prevention",
+      "taxonomy": {
+        "purpose": "Anti-Debugging",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Blocks dynamic instrumentation / Debugging"
+      },
+      "max_score": 0.4,
+      "locations": [
+        {
+          "class": "sg.vantagepoint.uncrackable2.MainActivity$2",
+          "method": "a([Ljava/lang/Void;)Ljava/lang/String;",
+          "line": 4,
+          "layer": "Java",
+          "full_signature": "sg.vantagepoint.uncrackable2.MainActivity$2->a([Ljava/lang/Void;)Ljava/lang/String;"
+        }
+      ]
+    }
+  }
+}

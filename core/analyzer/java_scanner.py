@@ -19,6 +19,9 @@ class JavaSinkScanner:
                 if sink:
                     args = self._resolve_arguments(code_lines, idx, registers)
                     snippet = code_lines[max(0, idx - 2): idx + 3]
+                    
+                    # Enhanced: Detect decision logic context (not just any conditional)
+                    is_decision_logic = self._is_decision_logic_context(code_lines, idx, sink_name=sink.get('name', ''))
 
                     hits.append(SinkHit(
                         sink=sink,
@@ -26,7 +29,7 @@ class JavaSinkScanner:
                         method_name=method_name,
                         line_number=idx + 1,
                         arguments=args,
-                        conditional=self._is_conditional_context(code_lines, idx),
+                        conditional=is_decision_logic,
                         is_obfuscated=is_obfuscated,
                         context_snippet=snippet
                     ))
@@ -37,13 +40,15 @@ class JavaSinkScanner:
                 # Cek apakah string ini mencurigakan (su, magisk, dll)
                 sink = self.sink_registry.match_string_indicator(string_val)
                 if sink:
+                    is_decision_logic = self._is_decision_logic_context(code_lines, idx, string_value=string_val)
+                    
                     hits.append(SinkHit(
                         sink=sink,
                         class_name=class_name,
                         method_name=method_name,
                         line_number=idx + 1,
                         arguments=[string_val],
-                        conditional=self._is_conditional_context(code_lines, idx),
+                        conditional=is_decision_logic,
                         is_obfuscated=is_obfuscated,
                         context_snippet=[line.strip()]
                     ))
@@ -76,7 +81,37 @@ class JavaSinkScanner:
                     args.append(arg)
         return args
 
+    def _is_decision_logic_context(self, code_lines: List[str], idx: int, sink_name: str = '', string_value: str = '') -> bool:
+        """
+        Enhanced detection for decision logic context vs utility functions.
+        Only returns True if the API/string is used in actual decision logic,
+        not just utility/helper functions.
+        """
+        scan_range = 5
+        
+        # Look for control flow indicators that suggest real decision logic
+        for i in range(max(0, idx - scan_range), min(len(code_lines), idx + scan_range)):
+            line = code_lines[i]
+            
+            # Check for conditional branching
+            if re.search(r'(if-|cmp|throw|return|const/4.*1|const/4.*0)', line):
+                return True
+            
+            # Check for throw/exception (common in decision logic)
+            if "throw" in line:
+                return True
+        
+        # Look for result assignments to fields/variables (not just immediate use)
+        for i in range(idx, min(len(code_lines), idx + 3)):
+            line = code_lines[i]
+            # Move result to register or field suggests it's being used in logic
+            if re.search(r'(move-result|move|sput|iput)', line):
+                return True
+        
+        return False
+
     def _is_conditional_context(self, code_lines: List[str], idx: int) -> bool:
+        # Original method - kept for backward compatibility
         # Cek apakah ada kontrol alur (if-eq, if-nez, dll) di dekat sink
         scan_range = 3
         for i in range(max(0, idx - scan_range), min(len(code_lines), idx + scan_range)):

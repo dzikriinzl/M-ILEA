@@ -1,5 +1,5 @@
-from dataclasses import dataclass
-from typing import List, Optional, Dict
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Any
 
 @dataclass
 class SinkHit:
@@ -11,5 +11,14 @@ class SinkHit:
     conditional: bool
     caller: Optional[str] = None
     is_obfuscated: bool = False
-    context_snippet: List[str] = None
-    layer: str = "Java" # Untuk membedakan Java/Native di Pattern Engine
+    context_snippet: List[str] = field(default_factory=list)
+    layer: str = "Java"
+
+@dataclass
+class ProtectionCandidate:
+    pattern_type: str
+    location: Dict[str, Any]
+    evidence: str
+    impact_hint: str
+    confidence_signal: Any  # Objek SinkHit yang akan dikirim ke Scorer
+    confidence_level: Optional[float] = None  # Explicit confidence from audit patterns

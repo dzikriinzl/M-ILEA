@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "app_name": "pinning.apk",
+    "analysis_type": "Static Analysis Engine - 4-Category Self-Protection Assessment",
+    "total_findings": 87,
+    "total_vulnerabilities": 110,
+    "framework": "Flutter"
+  },
+  "self_protection_categories": {
+    "1_environment_manipulation": {
+      "status": "NOT_DETECTED",
+      "description": "Root detection, emulator detection, environment checks",
+      "findings_count": 0,
+      "mechanisms": [],
+      "assessment": "No environment manipulation mechanisms found"
+    },
+    "2_analysis_prevention": {
+      "status": "NOT_DETECTED",
+      "description": "Anti-debugging, anti-hooking, timing checks, instrumentation detection",
+      "findings_count": 0,
+      "mechanisms": [],
+      "assessment": "No analysis prevention mechanisms found"
+    },
+    "3_integrity_enforcement": {
+      "status": "DETECTED",
+      "description": "Signature verification, code integrity checks, SSL pinning",
+      "findings_count": 87,
+      "mechanisms": [
+        {
+          "type": "Advanced SSL Pinning (Framework-level)",
+          "implementation": "OkHttp3 CertificatePinner",
+          "strategy": "Public key pinning via SHA-256 hashes",
+          "components": [
+            {
+              "name": "OkHttpClient.Builder",
+              "methods": 21,
+              "purpose": "Network client configuration"
+            },
+            {
+              "name": "CertificatePinner",
+              "methods": 12,
+              "purpose": "Certificate validation"
+            },
+            {
+              "name": "RealConnection",
+              "methods": 6,
+              "purpose": "TLS handshake enforcement"
+            },
+            {
+              "name": "RealCall",
+              "methods": 8,
+              "purpose": "Request routing"
+            },
+            {
+              "name": "Certificate Transparency",
+              "methods": 18,
+              "purpose": "CT log validation"
+            },
+            {
+              "name": "Chromium X509Util",
+              "methods": 14,
+              "purpose": "Android certificate verification"
+            }
+          ],
+          "impact": "Blocks traffic interception (MITM prevention)",
+          "confidence": 0.6,
+          "verdict": "Legitimate security feature, NOT an evasion mechanism"
+        }
+      ],
+      "assessment": "Active integrity enforcement via SSL pinning. Legitimate implementation, not self-protection."
+    },
+    "4_system_interaction": {
+      "status": "DETECTED",
+      "description": "Runtime execution, native library loading, file system access",
+      "findings_count": 55,
+      "vulnerabilities": [
+        {
+          "category": "Unsafe Deserialization",
+          "count": 7,
+          "severity": "CRITICAL",
+          "location": "kotlinx.serialization.json.internal.JsonTreeReader",
+          "methods": [
+            "readObject()",
+            "read()",
+            "invokeSuspend()"
+          ],
+          "impact": "Potential RCE through malicious JSON payloads",
+          "class": "Vulnerability"
+        },
+        {
+          "category": "Unencrypted HTTP Transmission",
+          "count": 18,
+          "severity": "HIGH",
+          "location": "org.chromium.net.urlconnection",
+          "methods": [
+            "CronetInputStream",
+            "CronetHttpURLConnection",
+            "CronetOutputStream"
+          ],
+          "impact": "Network interception possible (mitigated by HTTPS pinning)",
+          "class": "Vulnerability"
+        },
+        {
+          "category": "Sensitive Data in SharedPreferences",
+          "count": 28,
+          "severity": "HIGH",
+          "location": "org.chromium.base",
+          "methods": [
+            "ContextUtils",
+            "ApplicationStatus",
+            "EarlyTraceEvent"
+          ],
+          "impact": "Data exposure if device compromised",
+          "class": "Vulnerability"
+        },
+        {
+          "category": "External Storage Access (World-Readable)",
+          "count": 2,
+          "severity": "MEDIUM",
+          "location": "org.chromium.base.PathUtils",
+          "methods": [
+            "getAllPrivateDownloadsDirectories()"
+          ],
+          "impact": "Downloaded content accessible to other apps",
+          "class": "Vulnerability"
+        },
+        {
+          "category": "Deprecated Cryptography (MD5)",
+          "count": 1,
+          "severity": "MEDIUM",
+          "location": "org.chromium.net.X509Util",
+          "methods": [
+            "hashPrincipal()"
+          ],
+          "impact": "Weak cryptographic algorithm in certificate validation",
+          "class": "Vulnerability"
+        },
+        {
+          "category": "Exported Components",
+          "count": 2,
+          "severity": "HIGH",
+          "location": "AndroidManifest.xml (declared components)",
+          "methods": [
+            "Activity",
+            "BroadcastReceiver"
+          ],
+          "impact": "Other apps can launch components or send broadcasts",
+          "class": "Vulnerability"
+        }
+      ],
+      "assessment": "Multiple system interaction vulnerabilities. Primarily framework-related, not self-protection."
+    }
+  },
+  "vulnerability_summary": {
+    "critical": 14,
+    "high": 42,
+    "medium": 54,
+    "total": 110,
+    "by_category": {
+      "deserialization_unsafe": 7,
+      "http_unencrypted": 18,
+      "sharedpreferences_unencrypted": 28,
+      "external_storage_world_readable": 2,
+      "weak_cryptography": 1,
+      "component_exported": 2,
+      "other": 52
+    }
+  },
+  "threat_model": {
+    "assessment": "This is a demonstration/testing application focused on SSL pinning implementation",
+    "self_protection_presence": "MINIMAL",
+    "actual_security_posture": "VULNERABLE",
+    "evasion_mechanisms": "NONE DETECTED",
+    "hardening_recommendations": [
+      "Fix unsafe JSON deserialization - validate and sanitize all input",
+      "Use EncryptedSharedPreferences for sensitive data storage",
+      "Enforce HTTPS-only communication (no HTTP fallback)",
+      "Restrict external storage access to non-world-readable locations",
+      "Replace MD5 with SHA-256 for all cryptographic operations",
+      "Protect exported components with proper permissions"
+    ]
+  },
+  "methodology": {
+    "detection_engine": "M-ILEA Static Analyzer v1.0",
+    "java_sink_hits": 468,
+    "pattern_candidates": 259,
+    "final_deduplicated_findings": 87,
+    "detection_strategy": "Sink-based pattern matching with deduplication",
+    "confidence_model": "Weighted scoring (API 0.4, string 0.2, logic 0.15, native 0.1, context 0.05, redundancy 0.1)"
+  }
+}

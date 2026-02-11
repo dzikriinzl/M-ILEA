@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "app_name": "r2pay-v1.0.apk",
+    "total_unique_findings": 2,
+    "timestamp": "2026-02-10 20:27:51",
+    "backend_used": "auto",
+    "analysis_engine": "M-ILEA v2.0-Enhanced",
+    "deduplication_enabled": true,
+    "library_tagging_enabled": false,
+    "v2_features_enabled": true,
+    "confidence_metrics": {
+      "mean": 0.4,
+      "median": 0.4,
+      "std_dev": 0.0,
+      "min": 0.4,
+      "max": 0.4
+    },
+    "vulnerability_summary": {
+      "total_vulnerabilities": 1,
+      "critical_count": 0,
+      "high_count": 1,
+      "medium_count": 0,
+      "low_count": 0
+    }
+  },
+  "findings": [
+    {
+      "protection_type": "Root / Emulator Detection",
+      "taxonomy": {
+        "purpose": "Root / Emulator Detection",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Detects environment manipulation (Root/Emulator)"
+      },
+      "location": {
+        "class": "\u266b.\u1d64",
+        "method": "\u00f8()",
+        "line": 4,
+        "layer": "Java",
+        "file_path": "\u266b/\u1d64.java",
+        "full_signature": "\u266b.\u1d64 -> \u00f8()"
+      },
+      "semantic_label": "Infrastructure Validation: Inspecting system build tags and qemu props",
+      "confidence_score": 0.4,
+      "evidence_snippet": [
+        "L0010      ",
+        "L0011      ",
+        "L0012      # direct methods",
+        "L0013      .method public constructor <init>(Landroid/content/Context;)V",
+        "L0014          .locals 1",
+        "L0015          .param p1, \"context\"    # Landroid/content/Context;",
+        "L0016      ",
+        "L0017          .line 33",
+        "L0018 [*]      invoke-direct {p0}, Ljava/lang/Object;-><init>()V",
+        "L0019      ",
+        "L0020          .line 31",
+        "L0021          const/4 v0, 0x1",
+        "L0022      ",
+        "L0023          iput-boolean v0, p0, L\u266b/\u1d64;->\u03b8:Z",
+        "L0024      ",
+        "L0025          .line 34",
+        "L0026          iput-object p1, p0, L\u266b/\u1d64;->\u03b8:Landroid/content/Context;",
+        "L0027      ",
+        "L0028          .line 35",
+        "L0029 [!]      return-void",
+        "L0030      .end method",
+        "L0031      ",
+        "L0032      ",
+        "L0033      # virtual methods",
+        "L0034      .method public \u00b5()Z",
+        "L0035          .locals 5",
+        "L0036      ",
+        "L0037          .line 347"
+      ],
+      "signal_confidence": 0.4,
+      "confidence_breakdown": {
+        "api_match": false,
+        "string_indicator": false,
+        "control_flow": false,
+        "native_layer": false,
+        "context_strength": 0.0,
+        "multiple_checks": false,
+        "factors_found": 0
+      },
+      "associated_vulnerabilities": [],
+      "enhanced_evidence": {}
+    },
+    {
+      "protection_type": "Root / Emulator Detection",
+      "taxonomy": {
+        "purpose": "Root / Emulator Detection",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Detects environment manipulation (Root/Emulator)"
+      },
+      "location": {
+        "class": "\u266b.\u1d58",
+        "method": "<clinit>()",
+        "line": 16,
+        "layer": "Java",
+        "file_path": "\u266b/\u1d58.java",
+        "full_signature": "\u266b.\u1d58 -> <clinit>()"
+      },
+      "semantic_label": "Infrastructure Validation: Inspecting system build tags and qemu props",
+      "confidence_score": 0.4,
+      "evidence_snippet": [
+        "L0013      .field public static final \u03b8:[Ljava/lang/String;",
+        "L0014      ",
+        "L0015      ",
+        "L0016      # direct methods",
+        "L0017      .method public static constructor <clinit>()V",
+        "L0018          .locals 24",
+        "L0019      ",
+        "L0020          .line 18",
+        "L0021 [*]      const-string v0, \"com.noshufou.android.su\"",
+        "L0022      ",
+        "L0023          const-string v1, \"com.noshufou.android.su.elite\"",
+        "L0024      ",
+        "L0025          const-string v2, \"eu.chainfire.supersu\"",
+        "L0026      ",
+        "L0027          const-string v3, \"com.koushikdutta.superuser\"",
+        "L0028      ",
+        "L0029          const-string v4, \"com.thirdparty.superuser\""
+      ],
+      "signal_confidence": 0.4,
+      "confidence_breakdown": {
+        "api_match": false,
+        "string_indicator": false,
+        "control_flow": false,
+        "native_layer": false,
+        "context_strength": 0.0,
+        "multiple_checks": false,
+        "factors_found": 0
+      },
+      "associated_vulnerabilities": [],
+      "enhanced_evidence": {}
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "vulnerability_id": "CLEARTEXT_TRAFFIC",
+      "name": "Cleartext (HTTP) Traffic",
+      "category": "Network Security",
+      "severity": "High",
+      "location": {
+        "file": "\u266b.\u02cc.java",
+        "class": "\u266b.\u02cc",
+        "method": "\u03b8(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z"
+      },
+      "evidence": [
+        "    .locals 1",
+        "    .param p0, \"parser\"    # Lorg/xmlpull/v1/XmlPullParser;",
+        "    .param p1, \"attrName\"    # Ljava/lang/String;",
+        "...",
+        "    :goto_0",
+        "    return v0"
+      ],
+      "description": "App transmits data over unencrypted HTTP",
+      "remediation": "Use HTTPS/TLS for all network communication",
+      "cwe": "CWE-295",
+      "owasp_mstg": "MSTG-NETWORK-1",
+      "source_code": "    .locals 1\n    .param p0, \"parser\"    # Lorg/xmlpull/v1/XmlPullParser;\n    .param p1, \"attrName\"    # Ljava/lang/String;\n\n    .line 57\n    const-string v0, \"http://schemas.android.com/apk/res/android\"\n\n    invoke-interface {p0, v0, p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object v0\n\n    if-eqz v0, :cond_0\n\n    const/4 v0, 0x1\n\n    goto :goto_0\n\n    :cond_0\n    const/4 v0, 0x0\n\n    :goto_0\n    return v0",
+      "line_numbers": [
+        6
+      ]
+    }
+  ]
+}

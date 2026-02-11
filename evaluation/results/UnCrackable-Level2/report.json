@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "app_name": "UnCrackable-Level2.apk",
+    "total_unique_findings": 1,
+    "timestamp": "2026-02-10 20:27:45",
+    "backend_used": "auto",
+    "analysis_engine": "M-ILEA v2.0-Enhanced",
+    "deduplication_enabled": true,
+    "library_tagging_enabled": false,
+    "v2_features_enabled": true,
+    "confidence_metrics": {
+      "mean": 0.4,
+      "median": 0.4,
+      "std_dev": 0.0,
+      "min": 0.4,
+      "max": 0.4
+    },
+    "vulnerability_summary": {
+      "total_vulnerabilities": 0,
+      "critical_count": 0,
+      "high_count": 0,
+      "medium_count": 0,
+      "low_count": 0
+    }
+  },
+  "findings": [
+    {
+      "protection_type": "Anti-Debugging",
+      "taxonomy": {
+        "purpose": "Anti-Debugging",
+        "layer": "Java",
+        "strategy": "Control-flow-based",
+        "impact": "Blocks dynamic instrumentation / Debugging"
+      },
+      "location": {
+        "class": "sg.vantagepoint.uncrackable2.MainActivity$2",
+        "method": "a()",
+        "line": 4,
+        "layer": "Java",
+        "file_path": "sg/vantagepoint/uncrackable2/MainActivity$2.java",
+        "full_signature": "sg.vantagepoint.uncrackable2.MainActivity$2 -> a()"
+      },
+      "semantic_label": "Analysis Prevention: Monitoring Debug.isDebuggerConnected() flags",
+      "confidence_score": 0.4,
+      "evidence_snippet": [
+        "L0001      .class Lsg/vantagepoint/uncrackable2/MainActivity$2;",
+        "L0002      .super Landroid/os/AsyncTask;",
+        "L0003      ",
+        "L0004      ",
+        "L0005      # annotations",
+        "L0006 [*]  .annotation system Ldalvik/annotation/EnclosingMethod;",
+        "L0007          value = Lsg/vantagepoint/uncrackable2/MainActivity;->onCreate(Landroid/os/Bundle;)V",
+        "L0008      .end annotation",
+        "L0009      ",
+        "L0010      .annotation system Ldalvik/annotation/InnerClass;",
+        "L0011          accessFlags = 0x0",
+        "L0012          name = null",
+        "L0013      .end annotation",
+        "L0014      "
+      ],
+      "signal_confidence": 0.4,
+      "confidence_breakdown": {
+        "api_match": false,
+        "string_indicator": false,
+        "control_flow": false,
+        "native_layer": false,
+        "context_strength": 0.0,
+        "multiple_checks": false,
+        "factors_found": 0
+      },
+      "associated_vulnerabilities": [],
+      "enhanced_evidence": {}
+    }
+  ],
+  "vulnerabilities": []
+}

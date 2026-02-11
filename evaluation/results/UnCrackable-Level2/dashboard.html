@@ -1,0 +1,1381 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>M-ILEA Enhanced Report</title>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+            <!-- Chart.js for vulnerability visualization -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+            <style>
+                :root {
+                    --bg-body: #F8FAFC; --bg-card: #FFFFFF; --bg-darker: #F1F5F9;
+                    --text-primary: #1E293B; --text-secondary: #64748B;
+                    --accent: #4F46E5; --accent-hover: #4338CA; --border: #E2E8F0;
+                    --critical: #DC2626; --high: #F59E0B; --medium: #EAB308; --low: #10B981;
+                    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+                    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+                    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+
+                body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-body); color: var(--text-primary); display: flex; min-height: 100vh; font-size: 14px; }
+                
+                /* Sticky Header */
+                header {
+                    position: sticky;
+                    top: 0;
+                    background: #FFFFFF;
+                    backdrop-filter: none;
+                    z-index: 100;
+                    padding: 16px 0;
+                    margin: -40px -40px 40px -40px;
+                    padding: 16px 40px;
+                    border-bottom: 2px solid #E0E7FF;
+                    box-shadow: var(--shadow-sm);
+                }
+                
+                /* Sidebar Navigation */
+                .sidebar {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 260px;
+                    height: 100vh;
+                    background: var(--bg-card);
+                    border-right: 1px solid var(--border);
+                    padding: 20px;
+                    overflow-y: auto;
+                    z-index: 1000;
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: var(--shadow-sm);
+                }
+                
+                .sidebar-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 30px;
+                    padding-bottom: 20px;
+                    border-bottom: 2px solid #4F46E5;
+                }
+                
+                .sidebar-brand {
+                    font-size: 1.4rem;
+                    font-weight: 800;
+                    color: var(--accent);
+                    text-decoration: none;
+                }
+                
+                .sidebar-toggle {
+                    display: none;
+                    background: none;
+                    border: none;
+                    color: var(--text-primary);
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+                
+                .sidebar-menu {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    flex: 1;
+                }
+                
+                .sidebar-menu li {
+                    margin: 8px 0;
+                }
+                
+                .sidebar-menu a {
+                    display: block;
+                    padding: 12px 16px;
+                    color: var(--text-secondary);
+                    text-decoration: none;
+                    border-radius: 8px;
+                    transition: var(--transition);
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                    border-left: 3px solid transparent;
+                }
+                
+                .sidebar-menu a:hover {
+                    color: #FFFFFF;
+                    background: #4F46E5;
+                    border-left-color: #4F46E5;
+                    padding-left: 20px;
+                }
+                
+                .sidebar-footer {
+                    padding-top: 20px;
+                    border-top: 2px solid #4F46E5;
+                    text-align: center;
+                }
+                
+                .sidebar-version {
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    color: var(--accent);
+                }
+                
+                .sidebar-subtitle {
+                    font-size: 0.75rem;
+                    color: var(--text-secondary);
+                    margin-top: 4px;
+                }
+                
+                .container { 
+                    max-width: 1400px; 
+                    margin: 0 0 0 280px;
+                    padding: 40px 40px; 
+                    flex: 1;
+                }
+                
+                header { 
+                    display: flex; justify-content: space-between; align-items: flex-end; 
+                    margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border); 
+                }
+                .brand h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
+                .brand span { color: var(--accent); }
+                .version-badge { background: var(--accent); color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+                
+                /* Section Anchors for Sidebar Navigation */
+                .section-anchor {
+                    display: block;
+                    height: 0;
+                    visibility: hidden;
+                }
+
+                /* Professional Layout Grid */
+                .dashboard-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 28px;
+                    margin-bottom: 40px;
+                    align-items: stretch;
+                }
+                
+                .dashboard-row {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 28px;
+                    margin-bottom: 40px;
+                }
+                
+                .chart-container-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    gap: 20px;
+                    width: 100%;
+                    flex: 1;
+                    align-content: start;
+                }
+
+                .card { 
+                    background: var(--bg-card);
+                    border: 1px solid var(--border); 
+                    border-radius: 12px; 
+                    padding: 32px;
+                    box-shadow: var(--shadow-md);
+                    transition: var(--transition);
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .card:hover {
+                    border-color: var(--accent);
+                    box-shadow: var(--shadow-lg);
+                    transform: translateY(-2px);
+                }
+                
+                .card h2 { 
+                    font-size: 1.25rem; 
+                    color: var(--text-primary); 
+                    margin: 0 0 24px 0;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                
+                .card h2::before {
+                    content: '';
+                    display: inline-block;
+                    width: 4px;
+                    height: 18px;
+                    background: var(--accent);
+                    border-radius: 2px;
+                }
+                
+                .stat-item { 
+                    display: flex; 
+                    justify-content: space-between; 
+                    align-items: center;
+                    padding: 14px 0; 
+                    border-bottom: 1px solid var(--border);
+                    font-size: 0.95rem;
+                }
+                
+                .stat-item span:first-child {
+                    color: var(--text-secondary);
+                    font-weight: 500;
+                }
+                
+                .highlight-val { 
+                    color: var(--accent); 
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                }
+
+                /* Vulnerability Stats */
+                .vuln-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 16px;
+                    margin-top: 20px;
+                }
+                
+                .vuln-stat {
+                    padding: 20px;
+                    border-radius: 12px;
+                    text-align: center;
+                    background: #F8FAFC;
+                    border: 1.5px solid var(--border);
+                    transition: var(--transition);
+                    cursor: default;
+                }
+                
+                .vuln-stat:hover {
+                    border-color: var(--accent);
+                    background: #EEF2FF;
+                    transform: translateY(-2px);
+                }
+                
+                .vuln-stat.critical { 
+                    border-color: #FCA5A5;
+                    background: #FEF2F2;
+                }
+                
+                .vuln-stat.high { 
+                    border-color: #FCD34D;
+                    background: #FFFBEB;
+                }
+                
+                .vuln-stat.medium { 
+                    border-color: #FDE047;
+                    background: #FFFEF4;
+                }
+                
+                .vuln-stat.low { 
+                    border-color: #86EFAC;
+                    background: #F0FDF4;
+                }
+                
+                .vuln-num {
+                    display: block;
+                    font-size: 2rem;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                    line-height: 1;
+                }
+                
+                .vuln-stat.critical .vuln-num { color: var(--critical); }
+                .vuln-stat.high .vuln-num { color: var(--high); }
+                .vuln-stat.medium .vuln-num { color: var(--medium); }
+                .vuln-stat.low .vuln-num { color: var(--low); }
+                
+                .vuln-stat span:last-child {
+                    font-size: 0.85rem;
+                    color: var(--text-secondary);
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+
+                /* Metrics Grid */
+                .metrics-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 16px;
+                    margin-top: 20px;
+                }
+                
+                .metric-item {
+                    padding: 20px;
+                    background: #F8FAFC;
+                    border: 1px solid var(--border);
+                    border-radius: 12px;
+                    text-align: center;
+                    transition: var(--transition);
+                }
+                
+                .metric-item:hover {
+                    background: var(--bg-card);
+                    border-color: var(--accent);
+                    transform: translateY(-2px);
+                    box-shadow: var(--shadow-md);
+                }
+                
+                .metric-label {
+                    display: block;
+                    font-size: 0.75rem;
+                    color: var(--text-secondary);
+                    margin-bottom: 8px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    font-weight: 600;
+                }
+                
+                .metric-value {
+                    display: block;
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                    color: var(--accent);
+                    line-height: 1.2;
+                }
+
+                .chart-box { 
+                    background: #FFFFFF;
+                    border-radius: 10px; 
+                    border: 1px solid #E0E7FF; 
+                    padding: 20px;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                    min-height: 300px;
+                }
+                
+                .chart-box:hover {
+                    border-color: #4F46E5;
+                    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.15);
+                }
+                
+                .chart-box img { 
+                    width: 100%; 
+                    height: auto; 
+                    display: block;
+                    border-radius: 6px;
+                }
+                
+                .chart-box span {
+                    color: var(--text-primary);
+                    font-weight: 500;
+                }
+
+                /* Accordion UI */
+                .category-wrapper { 
+                    margin-bottom: 14px; 
+                    border: 1px solid #E0E7FF; 
+                    border-radius: 10px; 
+                    background: #FFFFFF;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                }
+                
+                .category-wrapper:hover {
+                    border-color: #4F46E5;
+                    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+                }
+                
+                .accordion-header { 
+                    width: 100%; 
+                    padding: 20px 24px; 
+                    background: none; 
+                    border: none; 
+                    color: #1E293B; 
+                    display: flex; 
+                    justify-content: space-between; 
+                    align-items: center; 
+                    cursor: pointer;
+                    font-weight: 600;
+                    transition: all 0.2s ease;
+                }
+                
+                .accordion-header:hover { 
+                    background: #EEF2FF;
+                }
+                
+                .chevron { 
+                    font-size: 0.7rem; 
+                    transition: transform 0.3s ease; 
+                    color: var(--accent);
+                }
+                
+                .header-left { 
+                    display: flex; 
+                    align-items: center; 
+                    gap: 12px;
+                }
+                
+                .cat-count { 
+                    font-size: 0.7rem; 
+                    background: #4F46E5;
+                    padding: 4px 14px; 
+                    border-radius: 20px;
+                    font-weight: 700;
+                    color: #FFFFFF;
+                }
+                
+                .accordion-content { 
+                    display: none; 
+                    padding: 24px; 
+                    background: #F8FAFC;
+                    border-top: 1px solid #E0E7FF;
+                }
+                
+                .active .chevron { 
+                    transform: rotate(90deg);
+                }
+                
+                .active + .accordion-content { 
+                    display: block;
+                }
+
+                /* Finding Cards */
+                .finding-card { 
+                    background: #FFFFFF;
+                    border: 2px solid #DDD6FE; 
+                    border-radius: 10px; 
+                    padding: 22px; 
+                    margin-bottom: 20px;
+                    transition: all 0.3s ease;
+                }
+                
+                .finding-card:hover {
+                    border-color: #4F46E5;
+                    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+                }
+                
+                .path-text { 
+                    font-family: 'Fira Code', monospace; 
+                    color: var(--accent); 
+                    font-size: 0.85rem;
+                }
+                
+                .badge { 
+                    padding: 6px 14px; 
+                    border-radius: 6px; 
+                    font-weight: 700; 
+                    font-size: 0.7rem; 
+                    border: 1px solid #E0E7FF;
+                    display: inline-block;
+                    transition: all 0.2s ease;
+                }
+                
+                .badge:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+                }
+                
+                .bg-green { 
+                    color: #10B981; 
+                    background: #F0FDF4;
+                    border-color: #86EFAC;
+                }
+                
+                .bg-blue { 
+                    color: #0369A1; 
+                    background: #F0F9FF;
+                    border-color: #7DD3FC;
+                }
+                
+                .bg-gray { 
+                    color: #64748B; 
+                    background: #F8FAFC;
+                    border-color: #CBD5E1;
+                }
+
+                /* Vulnerability Badges */
+                .vulns-associated {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    padding: 12px;
+                    background: #FEE2E2;
+                    border-left: 3px solid var(--critical);
+                    border-radius: 4px;
+                    margin: 10px 0;
+                    font-size: 0.85rem;
+                }
+                
+                .vuln-label {
+                    font-weight: 600;
+                    color: var(--critical);
+                }
+                
+                .vuln-badge {
+                    background: var(--critical);
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    font-size: 0.75rem;
+                    white-space: nowrap;
+                }
+                
+                .vuln-badge.vuln-critical { background: var(--critical); }
+                .vuln-badge.vuln-high { background: var(--high); }
+                .vuln-badge.vuln-medium { background: var(--medium); }
+                .vuln-badge.vuln-low { background: var(--low); }
+                .vuln-badge.vuln-info { background: var(--accent); }
+                
+                .vuln-more {
+                    color: var(--critical);
+                    font-weight: 600;
+                }
+
+                /* Source Viewer - Professional Enhancement */
+                .source-container { 
+                    border-radius: 8px; 
+                    border: 1px solid var(--border); 
+                    overflow: hidden; 
+                    margin-top: 15px;
+                    background: #0f1419;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                }
+                
+                .source-header { 
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+                    padding: 12px 16px; 
+                    font-size: 0.7rem; 
+                    color: var(--text-secondary); 
+                    text-transform: uppercase;
+                    border-bottom: 1px solid var(--border);
+                    font-weight: 600;
+                }
+                
+                .source-toggle {
+                    display: flex;
+                    gap: 8px;
+                }
+                
+                .source-lang-btn {
+                    padding: 4px 12px;
+                    border: 1px solid #DDD6FE;
+                    background: #F8FAFC;
+                    color: var(--text-secondary);
+                    border-radius: 4px;
+                    font-size: 0.65rem;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    font-weight: 600;
+                }
+                
+                .source-lang-btn:hover {
+                    background: #EEF2FF;
+                    border-color: var(--accent);
+                    color: var(--accent);
+                }
+                
+                .source-lang-btn.active {
+                    background: var(--accent);
+                    border-color: var(--accent);
+                    color: white;
+                }
+                
+                pre { 
+                    margin: 0; 
+                    padding: 16px; 
+                    overflow-x: auto; 
+                    background: #0f1419;
+                    line-height: 1.6;
+                }
+                
+                code { 
+                    font-family: 'Fira Code', monospace; 
+                    font-size: 0.85rem;
+                    color: #e0e7ff;
+                }
+                
+                .code-line { color: #a0aec0; white-space: pre; }
+                .highlight-line { color: #FFFFFF; background: #FFA657; display: block; margin: 0 -16px; padding: 0 16px; border-left: 3px solid #FF6B35; font-weight: 600; }
+                .highlight-decision { color: #FFFFFF; background: #F59E0B; border-left: 3px solid #DC2026; font-weight: 700; }
+
+                /* Vulnerability Details */
+                .vulnerability-details {
+                    margin-top: 40px;
+                }
+                
+                .vulnerability-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .vuln-detail-group {
+                    background: #FFFFFF;
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+                
+                .vuln-detail-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 15px 20px;
+                    background: #F8FAFC;
+                    border-bottom: 1px solid var(--border);
+                    cursor: pointer;
+                    user-select: none;
+                }
+                
+                .vuln-detail-header:hover {
+                    background: #F0F4FF;
+                }
+                
+                .vuln-type-name {
+                    flex: 1;
+                    font-weight: 600;
+                    color: var(--text-primary);
+                }
+                
+                .vuln-count {
+                    color: var(--text-secondary);
+                    font-size: 0.9rem;
+                }
+                
+                .vuln-detail-header .chevron {
+                    color: var(--text-secondary);
+                    transition: transform 0.2s;
+                }
+                
+                .vuln-detail-group.open .vuln-detail-header .chevron {
+                    transform: rotate(180deg);
+                }
+                
+                .vuln-detail-content {
+                    display: none;
+                    padding: 20px;
+                    background: #FFFFFF;
+                }
+                
+                .vuln-detail-group.open .vuln-detail-content {
+                    display: block;
+                }
+                
+                .vuln-instance {
+                    background: #F8FAFC;
+                    border: 1px solid var(--border);
+                    border-radius: 6px;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                }
+                
+                .instance-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #E2E8F0;
+                }
+                
+                .instance-location {
+                    color: var(--text-secondary);
+                    font-size: 0.9rem;
+                }
+                
+                .instance-meta {
+                    display: flex;
+                    gap: 20px;
+                    margin-bottom: 15px;
+                    font-size: 0.9rem;
+                    color: var(--text-secondary);
+                }
+                
+                .evidence-container {
+                    margin: 15px 0;
+                }
+                
+                .evidence-label {
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                    color: var(--text-secondary);
+                    font-size: 0.85rem;
+                    text-transform: uppercase;
+                }
+                
+                .code-snippet {
+                    background: #010409;
+                    border: 1px solid var(--border);
+                    border-radius: 4px;
+                    padding: 12px;
+                    font-family: 'Fira Code', monospace;
+                    font-size: 0.85rem;
+                    max-height: 300px;
+                    overflow-y: auto;
+                }
+                
+                .code-snippet .code-line {
+                    padding: 2px 0;
+                    color: #7d8590;
+                }
+                
+                .instance-details {
+                    margin-top: 15px;
+                    padding-top: 15px;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                }
+                
+                .detail-section {
+                    margin-bottom: 12px;
+                }
+                
+                .detail-section.remediation {
+                    background: rgba(34, 197, 94, 0.1);
+                    padding: 12px;
+                    border-radius: 4px;
+                    border-left: 3px solid #22c55e;
+                }
+                
+                .detail-section p {
+                    margin: 6px 0 0 0;
+                    font-size: 0.95rem;
+                    line-height: 1.5;
+                    color: var(--text-secondary);
+                }
+                
+                .more-instances {
+                    padding: 12px;
+                    background: rgba(255,255,255,0.02);
+                    border-radius: 4px;
+                    color: var(--text-secondary);
+                    font-size: 0.9rem;
+                    font-style: italic;
+                }
+
+                /* Vulnerability Charts */
+                .charts-row {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 20px;
+                    margin: 20px 0;
+                }
+                
+                .chart-container {
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    padding: 15px;
+                    min-height: 300px;
+                }
+                
+                /* Findings Table */
+                .findings-table {
+                    margin-top: 30px;
+                }
+                
+                .findings-table h3 {
+                    color: var(--text-primary);
+                    font-size: 1rem;
+                    margin-bottom: 15px;
+                }
+                
+                .findings-table table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    background: rgba(255,255,255,0.02);
+                    border: 1px solid var(--border);
+                    border-radius: 6px;
+                    overflow: hidden;
+                }
+                
+                .findings-table thead {
+                    background: rgba(255,255,255,0.08);
+                    border-bottom: 1px solid var(--border);
+                }
+                
+                .findings-table th {
+                    padding: 12px;
+                    text-align: left;
+                    font-weight: 600;
+                    font-size: 0.85rem;
+                    color: var(--text-secondary);
+                    text-transform: uppercase;
+                }
+                
+                .findings-table td {
+                    padding: 12px;
+                    border-bottom: 1px solid rgba(255,255,255,0.05);
+                    font-size: 0.9rem;
+                }
+                
+                .findings-table tbody tr:hover {
+                    background: rgba(255,255,255,0.05);
+                }
+                
+                .badge {
+                    display: inline-block;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                }
+                
+                .badge-count {
+                    background: var(--accent);
+                    color: white;
+                }
+                
+                .badge-critical {
+                    background: rgba(220, 38, 38, 0.2);
+                    color: #dc2626;
+                }
+                
+                .badge-high {
+                    background: rgba(245, 158, 11, 0.2);
+                    color: #f59e0b;
+                }
+                
+                .badge-medium {
+                    background: rgba(234, 179, 8, 0.2);
+                    color: #eab308;
+                }
+                
+                .badge-low {
+                    background: rgba(16, 185, 129, 0.2);
+                    color: #10b981;
+                }
+                
+                .findings-table code {
+                    background: rgba(255,255,255,0.05);
+                    padding: 2px 6px;
+                    border-radius: 3px;
+                    font-size: 0.8rem;
+                }
+
+                /* Findings Rundown Section */
+                .findings-rundown {
+                    margin-top: 60px;
+                    padding: 0;
+                }
+                
+                .findings-rundown > h2 {
+                    font-size: 0.8rem !important;
+                    color: var(--text-primary) !important;
+                    text-transform: uppercase;
+                    margin-bottom: 28px !important;
+                    letter-spacing: 0.15em;
+                    font-weight: 800;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                
+                /* Search/Filter Input */
+                .search-findings {
+                    width: 100%;
+                    padding: 12px 16px;
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+                    font-size: 14px;
+                    background: var(--bg-card);
+                    color: var(--text-primary);
+                    transition: var(--transition);
+                    margin-bottom: 20px;
+                    font-family: 'Inter', sans-serif;
+                }
+                
+                .search-findings:focus {
+                    outline: none;
+                    border-color: var(--accent);
+                    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+                }
+                
+                .search-findings::placeholder {
+                    color: var(--text-secondary);
+                }
+                
+                /* Copy Button */
+                .copy-btn {
+                    background: rgba(79, 70, 229, 0.1);
+                    border: 1px solid var(--border);
+                    color: var(--accent);
+                    padding: 6px 12px;
+                    border-radius: 6px;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                    transition: var(--transition);
+                    font-weight: 600;
+                    font-family: 'Inter', sans-serif;
+                }
+                
+                .copy-btn:hover {
+                    background: var(--accent);
+                    color: white;
+                    border-color: var(--accent);
+                }
+                
+                .findings-rundown > h2::before {
+                    content: '';
+                    display: inline-block;
+                    width: 4px;
+                    height: 4px;
+                    background: var(--accent);
+                    border-radius: 50%;
+                }
+
+                footer { 
+                    text-align: center; 
+                    color: var(--text-secondary); 
+                    font-size: 0.75rem; 
+                    padding: 40px 20px;
+                    border-top: 1px solid var(--border);
+                    margin-top: 60px;
+                    letter-spacing: 0.05em;
+                }
+                
+                /* Responsive Design */
+                @media (max-width: 1024px) {
+                    /* Tablet: Adjust layout for sidebar */
+                    .sidebar-toggle {
+                        display: block;
+                    }
+                    
+                    .container {
+                        margin: 0;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                    }
+                    
+                    .dashboard-grid {
+                        grid-template-columns: 1fr;
+                        gap: 24px;
+                    }
+                    
+                    .vuln-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 14px;
+                    }
+                    
+                    .metrics-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 14px;
+                    }
+                    
+                    .chart-container-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .container {
+                        padding: 30px 16px;
+                    }
+                    
+                    .card {
+                        padding: 22px;
+                    }
+                    
+                    header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 16px;
+                    }
+                    
+                    .meta-info {
+                        width: 100%;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    /* Mobile: Hide sidebar by default */
+                    .sidebar {
+                        position: fixed;
+                        left: -260px;
+                        width: 260px;
+                        height: 100vh;
+                        background: var(--bg-card);
+                        z-index: 1001;
+                        transition: left 0.3s ease;
+                        box-shadow: var(--shadow-lg);
+                    }
+                    
+                    .sidebar-toggle {
+                        display: block;
+                    }
+                    
+                    .container {
+                        margin: 0;
+                        padding: 20px;
+                    }
+                }
+                
+                @media (max-width: 640px) {
+                    .brand h1 {
+                        font-size: 1.4rem;
+                    }
+                    
+                    .dashboard-grid {
+                        gap: 16px;
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .dashboard-row {
+                        gap: 16px;
+                    }
+                    
+                    .vuln-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                    }
+                    
+                    .metrics-grid {
+                        grid-template-columns: 1fr;
+                        gap: 10px;
+                    }
+                    
+                    .chart-container-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .vuln-stat {
+                        padding: 12px;
+                    }
+                    
+                    .vuln-num {
+                        font-size: 1.2rem;
+                    }
+                    
+                    .source-header {
+                        flex-direction: column;
+                        gap: 8px;
+                        align-items: flex-start;
+                    }
+                    
+                    .source-toggle {
+                        width: 100%;
+                    }
+                    
+                    .source-lang-btn {
+                        flex: 1;
+                    }
+                    
+                    pre {
+                        font-size: 0.75rem;
+                    }
+                    
+                    code {
+                        font-size: 0.75rem;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-brand">M-ILEA</div>
+                    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="#summary" onclick="scrollToSection('summary'); return false;">Summary</a></li>
+                    <li><a href="#visualizations" onclick="scrollToSection('visualizations'); return false;">Security Visualizations</a></li>
+                    <li><a href="#vulnerabilities" onclick="scrollToSection('vulnerabilities'); return false;">Vulnerabilities</a></li>
+                    <li><a href="#metrics" onclick="scrollToSection('metrics'); return false;">Confidence Metrics</a></li>
+                    <li><a href="#evidence" onclick="scrollToSection('evidence'); return false;">Evidence & Details</a></li>
+                    <li><a href="#rundown" onclick="scrollToSection('rundown'); return false;">Analysis Rundown</a></li>
+                </ul>
+                <div class="sidebar-footer">
+                    <div class="sidebar-version">v2.0</div>
+                    <div class="sidebar-subtitle">Enhanced Framework</div>
+                </div>
+            </nav>
+            <div class="container">
+                <header>
+                    <div class="brand">
+                        <h1>M-ILEA <span>Security Analysis Dashboard</span></h1>
+                    </div>
+                    <div class="meta-info">
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Analyzing: <b style="color: var(--accent);">UnCrackable-Level2.apk</b></div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">Generated: 2026-02-10 20:27:46</div>
+                        </div>
+                    </div>
+                </header>
+
+                <div id="summary" class="dashboard-grid">
+                    <div class="card">
+                        <h2>Summary</h2>
+                        <div class="stat-item"><span>Engine</span><span class="highlight-val">M-ILEA v2.0-Enhanced</span></div>
+                        <div class="stat-item"><span>Findings</span><span class="highlight-val">1</span></div>
+                        <div class="stat-item"><span>v2.0 Features</span><span class="badge bg-green">Enabled</span></div>
+                        <div class="stat-item"><span>Status</span><span class="badge bg-green">Enhanced</span></div>
+                    </div>
+
+                    <div id="visualizations" class="card">
+                        <h2>Security Visualizations</h2>
+                        <div class="chart-container-grid">
+                            
+                <div class="chart-box">
+                    <img src="protection_dist.png" alt="Security Visualization">
+                </div>
+                
+                <div class="chart-box">
+                    <img src="strategy_dist.png" alt="Security Visualization">
+                </div>
+                
+                        </div>
+                    </div>
+                </div>
+
+                <div id="vulnerabilities" class="dashboard-row">
+                    
+            <div class="card vulnerability-card">
+                <h2>Vulnerability Analysis (v2.0)</h2>
+                <div class="vuln-grid">
+                    <div class="vuln-stat critical"><span class="vuln-num">0</span><span>Critical</span></div>
+                    <div class="vuln-stat high"><span class="vuln-num">0</span><span>High</span></div>
+                    <div class="vuln-stat medium"><span class="vuln-num">0</span><span>Medium</span></div>
+                    <div class="vuln-stat low"><span class="vuln-num">0</span><span>Low</span></div>
+                </div>
+            </div>
+            
+                </div>
+
+                <div id="metrics" class="dashboard-row">
+                    
+        <div class="card metrics-card">
+            <h2>Confidence Metrics (v2.0)</h2>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-label">Mean Confidence</span>
+                    <span class="metric-value">0.400</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Median Confidence</span>
+                    <span class="metric-value">0.400</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Std Deviation</span>
+                    <span class="metric-value">0.000</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Score Range</span>
+                    <span class="metric-value">0.400 - 0.400</span>
+                </div>
+            </div>
+        </div>
+        
+                </div>
+
+                <div id="evidence" class="section-anchor"></div>
+                
+                <div class="card" style="margin-bottom: 28px;">
+                    <h2>Evidence & Findings</h2>
+                    <input 
+                        type="text" 
+                        class="search-findings" 
+                        placeholder="🔍 Search findings by class, method, or type..." 
+                        aria-label="Search findings"
+                    >
+                </div>
+
+                
+
+                <div id="rundown" class="findings-rundown">
+                    <h2 style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 15px;">Detailed Analysis Rundown</h2>
+                    
+            <div class="category-wrapper">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="header-left">
+                        <span class="chevron">▶</span>
+                        <span class="cat-title">Anti-Debugging</span>
+                    </div>
+                    <span class="cat-count">1 Detections</span>
+                </button>
+                <div class="accordion-content">
+            
+                    <div class="finding-card">
+                        <div class="card-meta">
+                            <div class="loc-info">
+                                <span class="label">DETECTION PATH</span>
+                                <code class="path-text">sg.vantagepoint.uncrackable2.MainActivity$2 <span class="arrow">→</span> a()</code>
+                            </div>
+                            <div class="badge bg-gray">Confidence v2.0: 0.400</div>
+                        </div>
+                        <div class="taxonomy-bar">
+                            <span><b>Strategy:</b> Control-flow-based</span>
+                            <span class="separator">|</span>
+                            <span><b>Impact:</b> Blocks dynamic instrumentation / Debugging</span>
+                        </div>
+                        
+                        <div class="source-container">
+                            <div class="source-header">
+                                <span>Method Implementation Detail (Evidence)</span>
+                                <div class="source-toggle">
+                                    <button class="source-lang-btn active" onclick="toggleSourceLang(this, 'smali')">Smali</button>
+                                    <button class="source-lang-btn" onclick="toggleSourceLang(this, 'java')">Java</button>
+                                </div>
+                            </div>
+                            <pre><code class="source-code-smali" style="display: block;"><div class="code-line ">L0001      .class Lsg/vantagepoint/uncrackable2/MainActivity$2;</div><div class="code-line ">L0002      .super Landroid/os/AsyncTask;</div><div class="code-line ">L0003      </div><div class="code-line ">L0004      </div><div class="code-line ">L0005      # annotations</div><div class="code-line highlight-line">L0006 🎯  .annotation system Ldalvik/annotation/EnclosingMethod;</div><div class="code-line ">L0007          value = Lsg/vantagepoint/uncrackable2/MainActivity;->onCreate(Landroid/os/Bundle;)V</div><div class="code-line ">L0008      .end annotation</div><div class="code-line ">L0009      </div><div class="code-line ">L0010      .annotation system Ldalvik/annotation/InnerClass;</div><div class="code-line ">L0011          accessFlags = 0x0</div><div class="code-line ">L0012          name = null</div><div class="code-line ">L0013      .end annotation</div><div class="code-line ">L0014      </div></code></pre>
+                            <pre><code class="source-code-java" style="display: none;">// Java source code coming soon...</code></pre>
+                        </div>
+                    </div>
+                </div></div>
+                </div>
+
+                <footer>M-ILEA Advanced Security Analysis Framework &bullet; Analysis Report v2.0 &bullet; 2026</footer>
+            </div>
+
+            <script>
+                // Sidebar Navigation
+                function scrollToSection(sectionId) {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Close sidebar on mobile after click
+                        const sidebar = document.querySelector('.sidebar');
+                        if (window.innerWidth <= 768) {
+                            sidebar.style.left = '-260px';
+                        }
+                    }
+                }
+                
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+                    if (sidebar.style.left === '0px') {
+                        sidebar.style.left = '-260px';
+                    } else {
+                        sidebar.style.left = '0px';
+                    }
+                }
+                
+                // Update active sidebar menu based on scroll position
+                window.addEventListener('scroll', function() {
+                    const sections = ['summary', 'visualizations', 'vulnerabilities', 'metrics', 'evidence', 'rundown'];
+                    for (const sectionId of sections) {
+                        const section = document.getElementById(sectionId);
+                        if (section) {
+                            const rect = section.getBoundingClientRect();
+                            if (rect.top <= 100 && rect.bottom >= 100) {
+                                const links = document.querySelectorAll('.sidebar-menu a');
+                                links.forEach(link => link.style.color = 'var(--text-secondary)');
+                                const activeLink = document.querySelector(`.sidebar-menu a[href="#${sectionId}"]`);
+                                if (activeLink) {
+                                    activeLink.style.color = 'var(--text-primary)';
+                                    activeLink.style.background = 'rgba(59, 130, 246, 0.15)';
+                                    activeLink.style.borderLeftColor = 'var(--accent)';
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                function toggleAccordion(btn) {
+                    btn.classList.toggle('active');
+                    const content = btn.nextElementSibling;
+                    content.style.display = content.style.display === "block" ? "none" : "block";
+                }
+                
+                function toggleVulnDetail(header) {
+                    const group = header.closest('.vuln-detail-group');
+                    group.classList.toggle('open');
+                }
+                
+                function toggleSourceLang(btn, lang) {
+                    // Update button active state
+                    const buttons = btn.parentElement.querySelectorAll('.source-lang-btn');
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Toggle code visibility
+                    const container = btn.closest('.source-container');
+                    const javaCode = container.querySelector('.source-code-java');
+                    const smaliCode = container.querySelector('.source-code-smali');
+                    
+                    if (lang === 'java') {
+                        javaCode.style.display = 'block';
+                        smaliCode.style.display = 'none';
+                    } else {
+                        javaCode.style.display = 'none';
+                        smaliCode.style.display = 'block';
+                    }
+                    
+                    // Save preference
+                    localStorage.setItem('sourceCodeLang', lang);
+                }
+                
+                // Restore user's source language preference on page load
+                window.addEventListener('load', function() {
+                    const savedLang = localStorage.getItem('sourceCodeLang') || 'smali';
+                    if (savedLang === 'java') {
+                        document.querySelectorAll('.source-lang-btn').forEach(btn => {
+                            if (btn.textContent.trim() === 'Java') {
+                                btn.click();
+                            }
+                        });
+                    }
+                    
+                    // Add copy buttons to code snippets
+                    document.querySelectorAll('.source-container').forEach(container => {
+                        const header = container.querySelector('.source-header');
+                        if (header && !header.querySelector('.copy-btn')) {
+                            const copyBtn = document.createElement('button');
+                            copyBtn.className = 'copy-btn';
+                            copyBtn.textContent = '📋 Copy';
+                            copyBtn.onclick = (e) => {
+                                e.preventDefault();
+                                const code = container.querySelector('pre code').textContent;
+                                navigator.clipboard.writeText(code);
+                                copyBtn.textContent = '✓ Copied!';
+                                setTimeout(() => { copyBtn.textContent = '📋 Copy'; }, 2000);
+                            };
+                            header.appendChild(copyBtn);
+                        }
+                    });
+                    
+                    // Initialize search functionality
+                    initializeSearch();
+                });
+                
+                // Search/Filter functionality
+                function initializeSearch() {
+                    const searchInput = document.querySelector('.search-findings');
+                    if (!searchInput) return;
+                    
+                    searchInput.addEventListener('input', filterFindings);
+                }
+                
+                function filterFindings(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const categories = document.querySelectorAll('.category-wrapper');
+                    let visibleCount = 0;
+                    
+                    categories.forEach(category => {
+                        let hasVisibleItems = false;
+                        const items = category.querySelectorAll('.finding-card');
+                        
+                        items.forEach(item => {
+                            const text = item.textContent.toLowerCase();
+                            const matches = !searchTerm || text.includes(searchTerm);
+                            item.style.display = matches ? 'block' : 'none';
+                            if (matches) hasVisibleItems = true;
+                        });
+                        
+                        category.style.display = hasVisibleItems || !searchTerm ? 'block' : 'none';
+                        if (hasVisibleItems) visibleCount++;
+                    });
+                    
+                    const noResults = document.querySelector('.no-search-results');
+                    if (searchTerm && visibleCount === 0) {
+                        if (!noResults) {
+                            const msg = document.createElement('div');
+                            msg.className = 'no-search-results';
+                            msg.textContent = 'No findings match "' + searchTerm + '"';
+                            msg.style.cssText = 'padding: 20px; text-align: center; color: var(--text-secondary); font-style: italic;';
+                            document.querySelector('#evidence').parentElement.appendChild(msg);
+                        }
+                    } else if (noResults) {
+                        noResults.remove();
+                    }
+                }
+            </script>
+        </body>
+        </html>
+        

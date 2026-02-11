@@ -1,0 +1,14 @@
+{
+  "app_name": "SampleBankApp",
+  "protections": [
+    {
+      "type": "Root / Emulator Detection",
+      "location": {
+        "class": "com.sec.security.RootCheck",
+        "method": "isRooted"
+      },
+      "layer": "Application",
+      "impact": "Detects environment manipulation"
+    }
+  ]
+}

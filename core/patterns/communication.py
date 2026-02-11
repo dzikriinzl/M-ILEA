@@ -1,40 +1,39 @@
 from core.patterns.base import BaseProtectionPattern
-from core.patterns.models import ProtectionCandidate, ConfidenceSignal
+# Pastikan import mengarah ke model yang sudah kita seragamkan
+from core.analyzer.models import ProtectionCandidate
 
 class SSLPinningPattern(BaseProtectionPattern):
     PATTERN_NAME = "SSL Pinning"
     IMPACT_HINT = "Blocks traffic interception"
 
     def match(self, sink_hit, context=None):
-        # Ambil list framework dari context (jika ada)
+        # Ambil list framework dari context (misal untuk deteksi Flutter/BoringSSL)
         detected_fw = context.get("frameworks", []) if context else []
 
-        if sink_hit.sink["risk"] == "Secure Communication":
-            # LOGIKA REFINEMENT: Jika Flutter terdeteksi, naikkan status proteksi
+        # Sinkronisasi dengan Risk Category di sink_catalog.json
+        if sink_hit.sink.get("risk") == "Secure Communication":
+            
             current_pattern = self.PATTERN_NAME
             current_impact = self.IMPACT_HINT
 
-            if "Flutter" in detected_fw:
+            # Logika Context-Aware: Jika Flutter terdeteksi, berikan label lebih spesifik
+            if "Flutter" in detected_fw or sink_hit.sink.get("layer") == "Native":
                 current_pattern = "Advanced SSL Pinning (Framework-level)"
-                current_impact = "Blocks traffic interception (BoringSSL/Flutter)"
+                current_impact = "Blocks traffic interception (BoringSSL/Flutter/Native)"
 
+            # REVISI: Menggunakan struktur dictionary 'location' dan 'confidence_signal' yang seragam
             return ProtectionCandidate(
                 pattern_type=current_pattern,
-                sink=sink_hit.sink,
-                class_name=getattr(sink_hit, 'class_name', 'Unknown'),
-                method_name=getattr(sink_hit, 'method_name', 'Unknown'),
-                line_number=getattr(sink_hit, 'line_number', 0),
-                evidence={
-                    "api": sink_hit.sink["name"],
-                    "location": getattr(sink_hit, 'library', 'JavaLayer'),
-                    "snippet": getattr(sink_hit, 'context_snippet', [])
+                location={
+                    "class": sink_hit.class_name,
+                    "method": sink_hit.method_name,
+                    "line": sink_hit.line_number,
+                    "layer": getattr(sink_hit, 'layer', 'Java')
                 },
+                # Evidence berupa string informatif untuk laporan
+                evidence=f"Secure channel enforcement via {sink_hit.sink.get('name')}",
                 impact_hint=current_impact,
-                confidence_signal=ConfidenceSignal(
-                    has_string_match=getattr(sink_hit, 'is_string_based', False),
-                    has_api_match=True,
-                    has_control_flow_logic=getattr(sink_hit, 'conditional', False),
-                    is_native_implementation=sink_hit.sink["layer"] == "Native"
-                )
+                # Kirim objek hit sebagai signal untuk diproses Scorer.breakdown()
+                confidence_signal=sink_hit 
             )
         return None

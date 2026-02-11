@@ -1,21 +1,89 @@
 {
-  "root_indicators": [
-    "/system/xbin/su",
-    "/system/bin/su",
-    "magisk",
-    "busybox"
-  ],
-  "emulator_indicators": [
-    "goldfish",
-    "qemu",
-    "genymotion",
-    "sdk_gphone"
-  ],
+  "root_indicators": {
+    "file_existence_checks": [
+      "/system/xbin/su",
+      "/system/bin/su",
+      "/sbin/su",
+      "/system/app/Superuser.apk",
+      "/system/app/SuperSU.apk",
+      "/system/xbin/daemonsu"
+    ],
+    "package_checks": [
+      "com.noshufou.android.su",
+      "eu.chainfire.supersu",
+      "com.topjohnwu.magisk",
+      "com.koushikdutta.superuser",
+      "com.zachspong.temprootremoverjb",
+      "de.robv.android.xposed.installer"
+    ],
+    "execution_commands": [
+      "su",
+      "which su",
+      "id",
+      "ro.secure"
+    ]
+  },
+  "emulator_indicators": {
+    "build_properties": {
+      "fingerprint": ["generic", "vbox", "emulator"],
+      "model": ["sdk", "google_sdk", "emulator"],
+      "device": ["generic", "vbox86p"]
+    },
+    "hardware_strings": [
+      "goldfish",
+      "ranchu",
+      "vbox86",
+      "nox",
+      "ttVM_x86"
+    ],
+    "telephony": [
+      "Android"
+    ],
+    "properties": [
+      "ro.kernel.qemu",
+      "ro.hardware.virtual_device"
+    ]
+  },
+  "anti_analysis": {
+    "anti_debugging": [
+      "isDebuggerConnected",
+      "android.os.Debug",
+      "FLAG_DEBUGGABLE",
+      "getApplicationInfo"
+    ],
+    "anti_instrumentation": [
+      "frida",
+      "gum-js",
+      "xposed",
+      "de.robv.android.xposed",
+      "LD_PRELOAD",
+      "libfrida"
+    ],
+    "signature_verification": [
+      "getPackageInfo",
+      "GET_SIGNATURES",
+      "MessageDigest",
+      "SHA1",
+      "SHA256"
+    ]
+  },
   "benign_extensions": [
     ".jpg",
     ".png",
     ".mp4",
-    ".json"
+    ".json",
+    ".xml"
+  ],
+  "utility_methods_to_ignore": [
+    "toHexString",
+    "hexStringToByteArray",
+    "String.format",
+    "Arrays.asList",
+    "Collections",
+    "fillArray",
+    "initializeArray",
+    "byteToHex",
+    "hexToByte"
   ]
 }
 

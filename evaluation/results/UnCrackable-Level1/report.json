@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "app_name": "UnCrackable-Level1.apk",
+    "total_unique_findings": 0,
+    "timestamp": "2026-02-10 20:27:22",
+    "backend_used": "auto",
+    "analysis_engine": "M-ILEA v2.0-Enhanced",
+    "deduplication_enabled": true,
+    "library_tagging_enabled": false,
+    "v2_features_enabled": true,
+    "confidence_metrics": {},
+    "vulnerability_summary": {
+      "total_vulnerabilities": 1,
+      "critical_count": 0,
+      "high_count": 1,
+      "medium_count": 0,
+      "low_count": 0
+    }
+  },
+  "findings": [],
+  "vulnerabilities": [
+    {
+      "vulnerability_id": "WEAK_CRYPTO_ECB",
+      "name": "ECB Mode (Weak)",
+      "category": "Cryptography",
+      "severity": "High",
+      "location": {
+        "file": "sg.vantagepoint.a.a.java",
+        "class": "sg.vantagepoint.a.a",
+        "method": "a([B[B)[B"
+      },
+      "evidence": [
+        "    .locals 2",
+        "",
+        "    new-instance v0, Ljavax/crypto/spec/SecretKeySpec;",
+        "...",
+        "",
+        "    return-object p0"
+      ],
+      "description": "ECB (Electronic Codebook) mode is cryptographically weak",
+      "remediation": "Use GCM, CBC, or other authenticated modes",
+      "cwe": "CWE-327",
+      "owasp_mstg": "MSTG-CRYPTO-2",
+      "source_code": "    .locals 2\n\n    new-instance v0, Ljavax/crypto/spec/SecretKeySpec;\n\n    const-string v1, \"AES/ECB/PKCS7Padding\"\n\n    invoke-direct {v0, p0, v1}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V\n\n    const-string p0, \"AES\"\n\n    invoke-static {p0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;\n\n    move-result-object p0\n\n    const/4 v1, 0x2\n\n    invoke-virtual {p0, v1, v0}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V\n\n    invoke-virtual {p0, ",
+      "line_numbers": [
+        5
+      ]
+    }
+  ]
+}

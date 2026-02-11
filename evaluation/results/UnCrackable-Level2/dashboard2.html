@@ -1,0 +1,400 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Security Analysis Report | UnCrackable-Level2.apk</title>
+            <style>
+                :root {
+                    --bg-body: #0f172a;
+                    --bg-card: #1e293b;
+                    --text-primary: #f1f5f9;
+                    --text-secondary: #94a3b8;
+                    --accent-primary: #3b82f6;
+                    --accent-hover: #2563eb;
+                    --border-color: #334155;
+                    --code-bg: #0f172a;
+                    --success: #10b981;
+                }
+
+                * { box-sizing: border-box; }
+
+                body {
+                    margin: 0;
+                    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+                    background-color: var(--bg-body);
+                    color: var(--text-primary);
+                    line-height: 1.6;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                /* --- Layout & Typography --- */
+                .container {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 24px;
+                }
+
+                header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 40px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid var(--border-color);
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                .brand h1 {
+                    margin: 0;
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    letter-spacing: -0.025em;
+                }
+                
+                .brand span { color: var(--accent-primary); }
+                
+                .meta-info {
+                    text-align: right;
+                    font-size: 0.875rem;
+                    color: var(--text-secondary);
+                }
+
+                /* --- Dashboard Grid --- */
+                .dashboard-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    gap: 24px;
+                    margin-bottom: 32px;
+                }
+
+                .card {
+                    background: var(--bg-card);
+                    border: 1px solid var(--border-color);
+                    border-radius: 12px;
+                    padding: 24px;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                }
+                
+                .card:hover {
+                    border-color: var(--accent-primary);
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+                }
+
+                .card h2 {
+                    margin-top: 0;
+                    font-size: 0.875rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    color: var(--text-secondary);
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                /* --- Stats --- */
+                .stat-list { display: flex; flex-direction: column; gap: 16px; }
+                
+                .stat-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 12px;
+                    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+                }
+                .stat-item:last-child { border-bottom: none; }
+                
+                .stat-label { color: var(--text-secondary); font-size: 0.9rem; }
+                .stat-value { font-weight: 600; color: var(--text-primary); }
+                .stat-value.highlight { color: var(--accent-primary); font-size: 1.1rem; }
+
+                /* --- Chart --- */
+                .chart-container {
+                    width: 100%;
+                    min-height: 220px;
+                    background: var(--bg-body);
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    border: 1px dashed var(--border-color);
+                }
+                .chart-container img { max-width: 100%; height: auto; }
+
+                /* --- Table Section --- */
+                .table-controls {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                }
+
+                .search-box { position: relative; width: 100%; max-width: 400px; }
+                
+                .search-box input {
+                    width: 100%;
+                    background: var(--bg-body);
+                    border: 1px solid var(--border-color);
+                    color: var(--text-primary);
+                    padding: 10px 16px;
+                    border-radius: 8px;
+                    font-size: 0.9rem;
+                    transition: border-color 0.2s;
+                }
+                
+                .search-box input:focus {
+                    outline: none;
+                    border-color: var(--accent-primary);
+                    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+                }
+
+                /* Responsive Table Wrapper */
+                .table-container {
+                    width: 100%;
+                    overflow-x: auto;
+                    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+                    border-radius: 8px;
+                    border: 1px solid var(--border-color);
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-size: 0.9rem;
+                    min-width: 800px; /* Force scroll on small screens */
+                }
+
+                thead th {
+                    background: #1e293b;
+                    color: var(--text-secondary);
+                    font-weight: 600;
+                    text-align: left;
+                    padding: 16px;
+                    border-bottom: 2px solid var(--border-color);
+                    white-space: nowrap;
+                    position: sticky; /* Sticky Header */
+                    top: 0;
+                    z-index: 10;
+                }
+
+                tbody td {
+                    padding: 16px;
+                    border-bottom: 1px solid var(--border-color);
+                    vertical-align: top;
+                    background: var(--bg-card);
+                }
+
+                tbody tr:last-child td { border-bottom: none; }
+                tbody tr:hover td { background: #263344; }
+
+                /* --- Typography Helpers --- */
+                .finding-name { 
+                    font-weight: 700; 
+                    color: var(--text-primary); 
+                    font-size: 0.95rem;
+                }
+                .finding-id { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; opacity: 0.7; }
+
+                /* Code Styling with Truncation */
+                .code-cell { max-width: 400px; }
+                
+                .code-location, .code-method {
+                    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+                    font-size: 0.8rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis; /* Truncate long text */
+                    padding: 2px 0;
+                }
+                
+                .code-location { color: var(--accent-primary); }
+                .code-method { color: var(--text-secondary); }
+                .icon { opacity: 0.5; margin-right: 6px; display: inline-block; width: 14px; text-align: center; }
+
+                /* Tags & Badges */
+                .strategy-tag {
+                    display: inline-block;
+                    background: rgba(148, 163, 184, 0.1);
+                    color: var(--text-secondary);
+                    padding: 4px 10px;
+                    border-radius: 6px;
+                    font-size: 0.75rem;
+                    border: 1px solid var(--border-color);
+                    white-space: nowrap;
+                }
+
+                .badge {
+                    padding: 4px 12px;
+                    border-radius: 9999px;
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    display: inline-flex;
+                    align-items: center;
+                }
+                .bg-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); }
+                .bg-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+                .bg-gray { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.2); }
+
+                /* --- Footer --- */
+                footer {
+                    margin-top: 60px;
+                    text-align: center;
+                    color: var(--text-secondary);
+                    font-size: 0.8rem;
+                    border-top: 1px solid var(--border-color);
+                    padding-top: 24px;
+                }
+
+                /* --- Responsive Design (Mobile) --- */
+                @media (max-width: 768px) {
+                    .container { padding: 16px; }
+                    
+                    header { flex-direction: column; align-items: flex-start; text-align: left; gap: 10px; }
+                    .meta-info { text-align: left; width: 100%; }
+                    
+                    .dashboard-grid { grid-template-columns: 1fr; }
+                    
+                    .search-box { max-width: 100%; }
+                    
+                    /* Optional: Card view for table on very small screens if preferred, 
+                       but horizontal scroll is handled by .table-container */
+                }
+
+                /* --- Print Styles --- */
+                @media print {
+                    body { background: white; color: black; }
+                    .card { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; background: white; }
+                    .search-box { display: none; }
+                    .table-container { border: none; overflow: visible; }
+                    table { min-width: 100%; }
+                    thead th { background: #f8f9fa; color: black; border-bottom: 2px solid #000; }
+                    tbody td { border-bottom: 1px solid #ddd; background: white !important; color: black; }
+                    .code-location, .code-method { color: #333; }
+                    .finding-name { color: #000; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <header>
+                    <div class="brand">
+                        <h1>M-ILEA <span>Analysis Report</span></h1>
+                    </div>
+                    <div class="meta-info">
+                        <div>Generated on 2026-02-09 01:28:34</div>
+                        <div>Target: UnCrackable-Level2.apk</div>
+                    </div>
+                </header>
+
+                <div class="dashboard-grid">
+                    <!-- Executive Summary -->
+                    <div class="card">
+                        <h2>Executive Summary</h2>
+                        <div class="stat-list">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Findings</span>
+                                <span class="stat-value highlight">1 Detected</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Engine Backend</span>
+                                <span class="stat-value"><code>auto</code></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Analysis Status</span>
+                                <span class="badge bg-green">Completed Successfully</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visualization -->
+                    <div class="card">
+                        <h2>Visualization</h2>
+                        <div class="chart-container">
+                             <img src="protection_dist.png" alt="Analysis Chart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="table-controls">
+                        <h2>Detection Matrix</h2>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Filter findings by type, class, or method..." onkeyup="filterTable()">
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table id="findingsTable">
+                            <thead>
+                                <tr>
+                                    <th width="20%">Mechanism</th>
+                                    <th width="40%">Code Location</th>
+                                    <th width="25%">Strategy</th>
+                                    <th width="15%">Confidence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+            <tr>
+                <td data-label="Mechanism">
+                    <div class="finding-name">Anti-Debugging</div>
+                    <div class="finding-id">ID: #1</div>
+                </td>
+                <td data-label="Location" class="code-cell">
+                    <div class="code-location" title="sg.vantagepoint.uncrackable2.MainActivity$2">
+                        <span class="icon">📦</span> sg.vantagepoint.uncrackable2.MainActivity$2
+                    </div>
+                    <div class="code-method" title="a([Ljava/lang/Void;)Ljava/lang/String;">
+                        <span class="icon">ƒ</span> a([Ljava/lang/Void;)Ljava/lang/String;
+                    </div>
+                </td>
+                <td data-label="Strategy">
+                    <span class="strategy-tag">Control-flow-based</span>
+                </td>
+                <td data-label="Confidence">
+                    <span class="badge bg-gray">0.4</span>
+                </td>
+            </tr>
+            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>M-ILEA Security Engine &bull; Confidential &bull; Do not distribute without authorization.</p>
+                </footer>
+            </div>
+
+            <script>
+                function filterTable() {
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("searchInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("findingsTable");
+                    tr = table.getElementsByTagName("tr");
+
+                    for (i = 1; i < tr.length; i++) {
+                        tr[i].style.display = "none";
+                        td = tr[i].getElementsByTagName("td");
+                        // Search in all columns
+                        for (var j = 0; j < td.length; j++) {
+                            if (td[j]) {
+                                txtValue = td[j].textContent || td[j].innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    tr[i].style.display = "";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            </script>
+        </body>
+        </html>
+        
