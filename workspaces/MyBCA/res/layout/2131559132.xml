@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/2131367850" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.getListBillerDetail android:id="@id/2131363543" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="none" 2130969800="true" 2130970064="@null" />
-</RelativeLayout>

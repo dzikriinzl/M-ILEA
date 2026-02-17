@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<GridView android:gravity="center_horizontal" android:id="@id/2131364997" android:layout_width="fill_parent" android:layout_height="@dimen/2131165734" android:horizontalSpacing="@dimen/2131165747"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

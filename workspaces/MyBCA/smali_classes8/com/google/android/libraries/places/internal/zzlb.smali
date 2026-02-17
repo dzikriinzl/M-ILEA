@@ -1,8 +1,0 @@
-.class public interface abstract Lcom/google/android/libraries/places/internal/zzlb;
-.super Ljava/lang/Object;
-.source ""
-
-
-# virtual methods
-.method public abstract zza(Ljava/lang/String;)Lcom/google/android/libraries/places/internal/zzkg;
-.end method

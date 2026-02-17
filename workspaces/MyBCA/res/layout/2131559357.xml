@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:id="@id/2131363042" android:background="@drawable/2131231363" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/2131364633" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/2131232052" 2130969358="2131365158" 2130969362="2131365158" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="12.0dip" android:textColor="#ff885403" android:id="@id/2131367559" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="10.0dip" 2130969338="2131365158" 2130969357="@id/2131364633" 2130969362="2131365158" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="12.0dip" android:textColor="#ff005caa" android:id="@id/tv_see_more" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/2132022351" android:layout_marginStart="10.0dip" 2130969338="2131365158" 2130969357="@id/2131364633" 2130969361="@id/2131367559" />
-</o.retainAllInRangeruntime_release>

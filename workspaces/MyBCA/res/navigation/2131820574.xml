@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/2131365071" 2130969842="@id/2131366078" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <fragment android:label="Template7FormFragment" android:name="o.memoizeStaticMethod" android:id="@id/2131366078">
-        <argument android:name="biller" android:defaultValue="@null" 2130968644="o.getCheckedUrls" 2130969598="true" />
-    </fragment>
-</navigation>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/2131165950" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/2131559078" />
-    <include layout="@layout/2131559078" />
-    <include layout="@layout/2131559078" />
-    <include layout="@layout/2131559078" />
-    <include layout="@layout/2131559078" />
-</LinearLayout>

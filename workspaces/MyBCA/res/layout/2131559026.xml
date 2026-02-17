@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/2131363600" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.CallImpl android:id="@id/2131364944" android:background="@drawable/2131231292" android:paddingLeft="16.0dip" android:paddingTop="8.0dip" android:paddingRight="16.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/2131165950" android:paddingVertical="@dimen/2131166034" 2130968905="@layout/2131558616" 2130968921="2131362916" 2130969198="@dimen/2131165932" 2130969398="@layout/2131558885" 2130970063="@layout/2131558885" />
-</FrameLayout>

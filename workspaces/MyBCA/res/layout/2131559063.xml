@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/guideline" android:layout_width="wrap_content" android:layout_height="fill_parent" 2130969342="0.2" />
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:textColor="#ff0d5cab" android:id="@id/2131367415" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20.0dip" 2130969358="2131365158" 2130969362="2131365158" />
-    <View android:id="@id/2131367854" android:background="#807a7a7a" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="16.0dip" 2130969361="@id/2131367415" />
-</o.retainAllInRangeruntime_release>

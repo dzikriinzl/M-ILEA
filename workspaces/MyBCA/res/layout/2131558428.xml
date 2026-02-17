@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.fragment.app.FragmentContainerView android:name="o.isOneofPresent" android:id="@id/2131365038" android:layout_width="0.0dip" android:layout_height="0.0dip" 2130969001="true" 2130969332="2131365158" 2130969352="2131365158" 2130969356="2131365158" 2130969362="2131365158" />
-</o.retainAllInRangeruntime_release>

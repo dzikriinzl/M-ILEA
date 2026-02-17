@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.ShimmerMcaPocketWidgetBinding android:orientation="vertical" android:id="@id/2131365935" android:layout_width="fill_parent" android:layout_height="wrap_content" 2130969072="false" 2130970018="@string/widget_title_cashflow" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <WebView android:id="@id/2131367931" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </LinearLayout>
-</o.ShimmerMcaPocketWidgetBinding>

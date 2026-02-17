@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/2131365655" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.fragment.app.FragmentContainerView android:name="o.isOneofPresent" android:id="@id/2131365658" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130969001="true" />
-</FrameLayout>

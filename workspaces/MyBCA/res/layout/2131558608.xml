@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="12.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:id="@id/2131364870" android:layout_width="fill_parent" android:layout_height="wrap_content" 2130969358="2131365158" 2130969362="2131365158">
-        <o.FragmentPaylaterRegisterResultBinding android:textSize="12.0dip" android:textColor="#ff868e96" android:id="@id/tv_currency" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineHeight="@dimen/2131165964" />
-        <o.FragmentPaylaterRegisterDataBinding android:textSize="18.0dip" android:textColor="#ff495057" android:id="@id/2131367375" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="9.0dip" android:lineHeight="@dimen/2131165964" />
-    </LinearLayout>
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="11.0dip" android:textColor="#ff495057" android:id="@id/2131367064" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/2132020646" android:lineHeight="@dimen/2131165950" 2130969358="2131365158" 2130969361="@id/2131364870" />
-</o.retainAllInRangeruntime_release>

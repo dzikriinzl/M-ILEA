@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/2131365074" 2130969842="@id/2131366081" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <fragment android:label="Template98FormFragment" android:name="com.bca.mybca.omni.android.paychase.presentation.template98.Template98FormFragment" android:id="@id/2131366081">
-        <action android:id="@id/2131362213" 2130969010="@id/2131366082" 2130969085="@anim/2130772001" 2130969097="@anim/2130772002" 2130969654="@anim/2130772016" 2130969655="@anim/2130772017" />
-    </fragment>
-    <fragment android:label="Template98InquiryFragment" android:name="com.bca.mybca.omni.android.paychase.presentation.template98.Template98InquiryFragment" android:id="@id/2131366082" />
-</navigation>

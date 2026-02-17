@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.ShimmerMcaPocketWidgetBinding android:id="@id/2131365954" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130969069="true" 2130969073="true" 2130969601="5" 2130970018="@string/2132020141" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.retainAllInRangeruntime_release android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <o.FragmentPaylaterRegisterDataBinding android:textSize="16.0dip" android:textColor="#ff005caa" android:id="@id/2131363170" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/2132019941" android:paddingHorizontal="@dimen/2131165964" android:lineHeight="@dimen/2131165974" 2130969358="2131365158" 2130969362="2131365158" />
-        <androidx.recyclerview.widget.RecyclerView android:id="@id/2131363162" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="19.0dip" 2130969333="@id/2131363163" 2130969361="@id/2131363170" />
-        <o.FragmentPaylaterStatusFormBinding android:enabled="false" android:gravity="center" android:id="@id/2131363163" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="32.0dip" android:layout_marginRight="32.0dip" android:layout_marginBottom="20.0dip" android:text="@string/2132017460" android:layout_alignParentBottom="true" android:lineSpacingExtra="8.0dip" android:layout_marginHorizontal="@dimen/2131165989" 2130969332="2131365158" />
-    </o.retainAllInRangeruntime_release>
-</o.ShimmerMcaPocketWidgetBinding>

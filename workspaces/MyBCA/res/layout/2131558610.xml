@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff00335e" android:id="@id/2131367598" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:textAllCaps="true" 2130969406="@dimen/2131165966" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff00335e" android:id="@id/2131367125" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:textAllCaps="true" 2130969406="@dimen/2131165966" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="12.0dip" android:id="@id/2131366970" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969406="@dimen/2131165958" />
-</LinearLayout>

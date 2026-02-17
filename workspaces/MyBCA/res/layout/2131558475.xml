@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/2131365935" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.ShimmerMcaPocketWidgetBinding android:id="@id/2131365948" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130970018="@string/2132018606">
-        <include android:id="@id/2131363597" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="57.0dip" layout="@layout/2131558719" />
-    </o.ShimmerMcaPocketWidgetBinding>
-    <FrameLayout android:id="@id/2131363596" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <include android:id="@id/2131364698" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/2131559268" />
-</RelativeLayout>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/2131365660" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130969318="androidx.recyclerview.widget.LinearLayoutManager" />
-    <ImageView android:id="@id/sbn_product_error_icon_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@null" 2130969333="@id/sbn_product_error_message_tv" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" 2130969364="2131365155" />
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:textColor="#ff495057" android:id="@id/sbn_product_error_message_tv" android:layout_width="230.0dip" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/2132019899" android:textAlignment="center" 2130969332="2131365158" 2130969338="2131365158" 2130969358="2131365158" 2130969361="@id/sbn_product_error_icon_iv" />
-    <o.setModificationruntime_release android:id="@id/2131365605" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130968902="sbn_product_error_icon_iv, sbn_product_error_message_tv" />
-</o.retainAllInRangeruntime_release>

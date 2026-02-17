@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageButton android:id="@id/2131364213" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@null" android:scaleType="fitCenter" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" style="@style/2132083487" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="12.0dip" android:textColor="#ff212529" android:gravity="center" android:id="@id/2131367028" android:clickable="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="20,000" android:textAlignment="center" 2130969339="@id/2131364216" 2130969348="0.5" 2130969352="2131365158" 2130969355="@id/2131364216" 2130969358="2131365158" 2130969361="@id/2131364213" />
-    <ImageButton android:id="@id/2131364216" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="4.0dip" android:src="@null" 2130969338="2131365158" 2130969348="0.5" 2130969357="@id/2131367028" 2130969361="@id/2131364213" />
-</o.retainAllInRangeruntime_release>

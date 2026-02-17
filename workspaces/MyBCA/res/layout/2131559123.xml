@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:layout_marginBottom="18.0dip" android:layout_marginStart="18.0dip" android:layout_marginEnd="28.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="16.0dip" android:textColor="#ff005caa" android:id="@id/2131363305" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="5.0dip" android:layout_marginEnd="67.0dip" android:layout_toStartOf="@id/2131363302" android:layout_alignParentStart="true" />
-    <LinearLayout android:orientation="vertical" android:id="@id/2131363302" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_alignParentEnd="true">
-        <o.FragmentPaylaterRegisterResultBinding android:textSize="11.0dip" android:textColor="#ff00335e" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/2132023120" />
-        <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff00b5f0" android:id="@id/2131363303" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
-    </LinearLayout>
-</RelativeLayout>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@style/2132083170" android:textColor="?2130970040" android:ellipsize="end" android:id="@id/message" android:background="?2130970041" android:paddingLeft="16.0dip" android:paddingTop="6.5dip" android:paddingRight="16.0dip" android:paddingBottom="6.5dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:maxWidth="256.0dip" android:maxLines="3" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" />
-</LinearLayout>

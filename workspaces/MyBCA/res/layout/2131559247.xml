@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/2131364823" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/2131364516" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@null" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff495057" android:gravity="center" android:id="@id/2131367170" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:textAlignment="center" 2130968578="555" />
-    <o.FragmentPaylaterStatusFormBinding android:textSize="16.0dip" android:gravity="center" android:id="@id/2131362763" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginTop="24.0dip" android:textAllCaps="false" 2130968578="495" />
-</LinearLayout>

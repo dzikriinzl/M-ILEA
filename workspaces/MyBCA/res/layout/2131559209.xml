@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:id="@id/2131362953" android:layout_width="fill_parent" android:layout_height="111.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/2131364529" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="centerInside" 2130969332="2131365158" 2130969337="1:1" 2130969339="@id/2131364469" 2130969347="0.5" 2130969348="0.4" 2130969358="2131365158" 2130969362="2131365158" />
-    <ImageView android:id="@id/2131364469" android:layout_width="0.0dip" android:layout_height="0.0dip" android:src="@null" android:scaleType="centerInside" 2130969332="2131365158" 2130969337="1:1" 2130969338="2131365158" 2130969347="0.7" 2130969358="2131365158" 2130969362="2131365158" />
-</o.retainAllInRangeruntime_release>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/2131165964" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/2131364062" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.08" />
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/2131364064" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.92" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff144e83" android:id="@id/tv_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginEnd="20.0dip" 2130969339="@id/2131364455" 2130969358="@id/2131364062" 2130969362="2131365158" />
-    <ImageView android:id="@id/2131364455" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/2131231587" 2130969332="2131365158" 2130969338="@id/2131364064" 2130969362="2131365158" />
-    <ImageView android:id="@id/2131364569" android:layout_width="0.0dip" android:layout_height="60.0dip" android:layout_marginTop="8.0dip" android:src="@drawable/2131231751" android:scaleType="fitStart" android:layout_marginEnd="20.0dip" 2130969339="@id/2131364455" 2130969348="0.5" 2130969358="@id/tv_name" 2130969361="@id/tv_name" />
-</o.retainAllInRangeruntime_release>

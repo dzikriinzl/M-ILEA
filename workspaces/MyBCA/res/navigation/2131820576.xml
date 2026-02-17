@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/2131365073" 2130969842="@id/2131366080" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <fragment android:label="Template97Fragment" android:name="com.bca.mybca.omni.android.paychase.presentation.template97.Template97Fragment" android:id="@id/2131366080" />
-</navigation>

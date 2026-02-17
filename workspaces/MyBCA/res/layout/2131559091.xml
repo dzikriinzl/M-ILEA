@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip" android:layout_marginStart="20.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/2131364543" android:layout_width="32.0dip" android:layout_height="32.0dip" android:scaleType="centerInside" 2130969358="2131365158" 2130969362="2131365158" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="16.0dip" android:textColor="#ff0d5cab" android:id="@id/2131367579" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:layout_marginStart="16.0dip" 2130969332="@id/2131364543" 2130969357="@id/2131364543" 2130969362="@id/2131364543" />
-    <View android:id="@id/2131367763" android:background="#ff005caa" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="12.0dip" 2130969361="@id/2131364543" />
-</o.retainAllInRangeruntime_release>

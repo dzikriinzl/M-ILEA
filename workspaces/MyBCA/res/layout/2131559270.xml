@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:id="@id/2131362966" android:background="#6600335e" android:layout_width="fill_parent" android:layout_height="fill_parent" android:elevation="64.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.setTranslateX android:id="@id/2131364939" android:layout_width="72.0dip" android:layout_height="72.0dip" 2130969332="2131365158" 2130969352="2131365158" 2130969356="2131365158" 2130969362="2131365158" 2130969435="true" 2130969446="true" 2130969448="@raw/2131951668" />
-</o.retainAllInRangeruntime_release>

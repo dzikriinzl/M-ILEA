@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/2131231220" />
-    <item android:drawable="@drawable/2131231215" android:left="3.0dip" android:top="3.0dip" android:right="3.0dip" android:bottom="3.0dip" />
-</layer-list>

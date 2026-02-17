@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="16.0dip" android:textColor="#ff144e83" android:ellipsize="end" android:id="@id/2131367607" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:layout_marginEnd="4.0dip" />
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:textColor="#ffcd1923" android:id="@id/2131367599" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:maxLines="1" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="12.0dip" android:textColor="#ff495057" android:ellipsize="end" android:id="@id/2131367023" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginEnd="4.0dip" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="12.0dip" android:textColor="#ff495057" android:ellipsize="end" android:id="@id/2131367042" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:maxLines="1" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="12.0dip" android:textColor="#ff495057" android:ellipsize="end" android:id="@id/2131367041" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:maxLines="1" />
-</LinearLayout>

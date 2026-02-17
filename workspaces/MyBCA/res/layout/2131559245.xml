@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/2131364823" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="20.0dip" android:paddingEnd="20.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@null" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="16.0dip" android:textColor="#ff144e83" android:gravity="center" android:id="@id/2131367174" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="@string/2132019856" android:textAlignment="center" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff495057" android:gravity="center" android:id="@id/2131367170" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/2132019856" android:textAlignment="center" />
-    <o.FragmentPaylaterStatusFormBinding android:textSize="16.0dip" android:gravity="center" android:id="@id/2131362763" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="@string/2132017487" android:textAllCaps="false" />
-</LinearLayout>

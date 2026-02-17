@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.setMenu android:id="@id/2131362042" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/2131558420" />
-    <androidx.appcompat.widget.ViewStubCompat android:id="@id/2131362144" android:layout="@layout/2131558404" android:inflatedId="@id/2131362143" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</o.setMenu>

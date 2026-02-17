@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginBottom="40.0dip" android:layout_weight="1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterStatusFormBinding android:layout_gravity="center" android:id="@id/2131363094" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/2132023094" />
-</FrameLayout>

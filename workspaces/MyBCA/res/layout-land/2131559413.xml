@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.BuiltInsBinaryVersion android:orientation="horizontal" android:id="@id/2131364961" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130968779="@id/2131364959" 2130969747="true" 2130969814="true" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:id="@id/2131364959" android:layout_width="0.0dip" android:text="AM" android:layout_weight="1.0" android:insetTop="4.0dip" android:insetBottom="4.0dip" style="?2130969467" />
-    <Button android:id="@id/2131364960" android:layout_width="0.0dip" android:text="PM" android:layout_weight="1.0" android:insetTop="4.0dip" android:insetBottom="4.0dip" style="?2130969467" />
-</o.BuiltInsBinaryVersion>

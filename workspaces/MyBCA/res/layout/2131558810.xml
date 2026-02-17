@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.ShimmerMcaPocketWidgetBinding android:id="@id/2131365935" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130970018="@string/2132019793" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/2131365517" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</o.ShimmerMcaPocketWidgetBinding>

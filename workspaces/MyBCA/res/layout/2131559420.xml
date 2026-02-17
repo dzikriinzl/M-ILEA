@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:id="@id/2131364969" android:layout_width="wrap_content" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/2131364956" layout="@layout/2131559410" />
-    <include android:id="@id/2131364961" layout="@layout/2131559412" />
-    <o.fromString android:layout_gravity="center" android:id="@id/2131364957" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="36.0dip" 2130969338="2131365158" 2130969358="2131365158" 2130969361="@id/2131364956" />
-</merge>

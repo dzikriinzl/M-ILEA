@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option java_package = "com.bca.mybca.omni.android.welma";
-option java_multiple_files = true;
-
-message GoldSavingsPreferences {
-  bool isShowOnboarding = 1;
-}

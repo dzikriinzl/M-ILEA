@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.isNestedClass android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969091="@null" 2130969211="false" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.getRelativeClassName android:paddingBottom="@dimen/2131165676" android:layout_width="96.0dip" android:layout_height="80.0dip" android:textCursorDrawable="@drawable/2131232582" />
-    <TextView android:id="@id/2131364964" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</o.isNestedClass>

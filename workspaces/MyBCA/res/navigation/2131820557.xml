@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/2131365054" 2130969842="@id/2131364109" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <fragment android:label="DetailApplyCCInstallmentFragment" android:name="o.muteAudio" android:id="@id/2131363294" />
-    <fragment android:label="HistoryApplyCCInstallmentFragment" android:name="o.unhold" android:id="@id/2131364109">
-        <action android:id="@id/2131362132" 2130969010="@id/2131363294" />
-    </fragment>
-</navigation>

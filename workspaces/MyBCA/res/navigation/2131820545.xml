@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/2131365025" 2130969842="@id/2131362674" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <fragment android:label="BiometricConfirmationFragment" android:name="com.bca.mybca.omni.android.auth.presentation.biometric.BiometricConfirmationFragment" android:id="@id/2131362674">
-        <action android:id="@id/2131362046" 2130969010="@id/2131362675" 2130969085="@anim/2130772001" 2130969097="@anim/2130772002" 2130969654="@anim/2130772016" 2130969655="@anim/2130772017" />
-    </fragment>
-    <fragment android:label="BiometricVerifyPinFragment" android:name="o.userEventTriggered" android:id="@id/2131362675" />
-</navigation>

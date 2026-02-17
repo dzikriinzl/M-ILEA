@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterStatusFormBinding android:textSize="16.0dip" android:gravity="center" android:id="@id/2131364255" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/2132017466" android:lineSpacingExtra="8.0dip" android:layout_marginHorizontal="@dimen/2131165964" />
-</LinearLayout>

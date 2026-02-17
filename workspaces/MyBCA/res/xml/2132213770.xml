@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<input-method android:icon="@null" android:settingsActivity="com.bca.mybca.omni.android.rune_keyboard.settings.presentation.screen.KeyboardSettingsActivity"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <subtype android:label="@string/2132017286" android:imeSubtypeMode="Keyboard" />
-</input-method>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@id/2131364889" android:paddingLeft="8.0dip" android:paddingTop="16.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingHorizontal="@dimen/2131166034"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:textColor="#ff005caa" android:gravity="center" android:id="@id/2131367551" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/2132017459" />
-</LinearLayout>

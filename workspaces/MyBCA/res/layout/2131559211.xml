@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/2131364825" android:background="#ffffffff" android:paddingLeft="50.0dip" android:paddingRight="50.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="20.0dip" android:textColor="#ff0d5cab" android:gravity="center" android:id="@id/2131367164" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="87.0dip" android:text="@string/2132017643" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="15.0dip" android:textColor="#ff0d5cab" android:gravity="center" android:layout_gravity="center" android:id="@id/2131367159" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/2132017642" />
-    <o.retainAllInRangeruntime_release android:layout_gravity="center" android:id="@id/2131362728" android:background="@drawable/2131231376" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:paddingStart="24.0dip" android:paddingEnd="24.0dip" 2130969361="@id/2131363041">
-        <o.LayoutPaylaterRegisterKtpBinding android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/2131367361" android:background="@android:color/transparent" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/2132017601" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" />
-    </o.retainAllInRangeruntime_release>
-</LinearLayout>

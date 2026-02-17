@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/2131165964"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:gravity="center" android:id="@id/2131363518" android:clickable="false" android:layout_width="20.0dip" android:layout_height="20.0dip" android:scaleType="fitXY" android:layout_centerVertical="true" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="18.0dip" android:textColor="@drawable/2131232712" android:gravity="center_vertical" android:id="@id/2131363519" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/2132023094" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" android:layout_toEndOf="@id/2131363518" />
-    <ImageView android:gravity="center" android:id="@id/2131363515" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/2131231587" android:layout_alignTop="@id/2131363519" android:layout_alignBottom="@id/2131363519" android:layout_marginStart="16.0dip" android:layout_marginEnd="8.0dip" android:layout_alignParentEnd="true" />
-    <View android:id="@id/divider" android:background="#ffe9ecef" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/2131363519" />
-</RelativeLayout>

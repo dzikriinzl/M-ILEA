@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="16.0dip" android:textColor="#ff0d5cab" android:id="@id/2131367437" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    <ImageView android:id="@id/2131364606" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@null" android:scaleType="fitXY" android:layout_marginStart="16.0dip" />
-</LinearLayout>

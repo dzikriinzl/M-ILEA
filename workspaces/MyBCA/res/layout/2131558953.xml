@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:background="@drawable/2131231448" android:paddingLeft="12.0dip" android:paddingTop="8.0dip" android:paddingRight="12.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/2131165932" android:paddingVertical="@dimen/2131166034" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff212529" android:id="@id/2131367071" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="10.0dip" android:drawableEnd="@drawable/2131231621" android:textAlignment="viewStart" 2130969358="2131365158" 2130969362="2131365158" />
-</o.retainAllInRangeruntime_release>

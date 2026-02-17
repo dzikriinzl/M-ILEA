@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.ShimmerMcaPocketWidgetBinding android:layout_width="fill_parent" android:layout_height="fill_parent" 2130969072="false" 2130970018="@string/2132018401" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.entryKeyIndexruntime_release android:id="@id/2131363511" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</o.ShimmerMcaPocketWidgetBinding>

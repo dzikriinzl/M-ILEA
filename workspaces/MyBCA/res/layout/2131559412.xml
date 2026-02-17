@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.BuiltInsBinaryVersion android:orientation="vertical" android:id="@id/2131364961" android:visibility="gone" android:layout_width="52.0dip" android:layout_height="96.0dip" android:contentDescription="@string/2132020578" android:layout_marginStart="12.0dip" 2130968779="@id/2131364959" 2130969357="@id/2131364956" 2130969362="2131365158" 2130969747="true" 2130969814="true" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.readFrom android:id="@id/2131364959" android:layout_width="wrap_content" android:text="AM" android:insetTop="8.0dip" style="?2130969467" />
-    <o.readFrom android:id="@id/2131364960" android:layout_width="wrap_content" android:text="PM" android:insetBottom="8.0dip" style="?2130969467" />
-</o.BuiltInsBinaryVersion>

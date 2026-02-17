@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/topPanel" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:id="@id/title_template" style="?2130969465">
-        <ImageView android:id="@android:id/icon" style="?2130969464" />
-        <o.setActionBarHideOffset android:id="@id/alertTitle" style="?2130969466" />
-    </LinearLayout>
-    <android.widget.Space android:id="@id/titleDividerNoCustom" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="8.0dip" />
-</LinearLayout>

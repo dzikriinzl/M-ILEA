@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<host-apdu-service android:description="@string/2132017286" android:requireDeviceUnlock="true" android:requireDeviceScreenOn="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <aid-group android:description="@string/2132017286" android:category="payment">
-        <aid-filter android:name="A0000006022020" />
-    </aid-group>
-</host-apdu-service>

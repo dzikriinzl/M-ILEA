@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/2131365002" android:paddingLeft="12.0dip" android:paddingTop="@dimen/2131165757" android:paddingRight="12.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.isNestedClass android:id="@id/2131365013" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <o.getRelativeClassName android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/2132020844" android:inputType="date" android:imeOptions="flagNoExtractUi" />
-    </o.isNestedClass>
-</FrameLayout>

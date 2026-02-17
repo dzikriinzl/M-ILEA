@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/2131365519" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130969318="androidx.recyclerview.widget.LinearLayoutManager" />
-</o.retainAllInRangeruntime_release>

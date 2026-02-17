@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/2131364556" android:layout_width="200.0dip" android:layout_height="200.0dip" android:src="@null" android:contentDescription="Gambar Tutorial" 2130969333="@id/2131366222" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" 2130969364="2131365155" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="16.0dip" android:textColor="#ff144e83" android:gravity="center" android:id="@id/2131366222" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" 2130969332="2131365158" 2130969338="@id/gl_end" 2130969358="@id/gl_start" 2130969361="@id/2131364556" />
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/gl_start" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.15" />
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/gl_end" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.85" />
-</o.retainAllInRangeruntime_release>

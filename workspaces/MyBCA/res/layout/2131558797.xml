@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.ShimmerMcaPocketWidgetBinding android:id="@id/2131365938" android:layout_width="fill_parent" android:layout_height="fill_parent" 2130969069="true" 2130969072="true" 2130970018="@string/2132022555" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="20.0dip">
-        <o.PayLaterRegisterPinViewModel_HiltModulesKeyModule android:id="@id/2131364602" android:layout_width="fill_parent" android:layout_height="wrap_content" android:adjustViewBounds="true" android:cropToPadding="true" 2130969362="2131365158" />
-        <o.FragmentPaylaterRegisterConfirmBinding android:textSize="14.0dip" android:id="@id/2131362899" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:button="@drawable/2131232708" android:text="@string/2132022123" android:paddingStart="14.0dip" 2130969361="@id/2131364602" />
-        <o.FragmentPaylaterStatusFormBinding android:enabled="false" android:id="@id/2131362799" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/2132017496" 2130969361="@id/2131362899" />
-    </o.retainAllInRangeruntime_release>
-</o.ShimmerMcaPocketWidgetBinding>

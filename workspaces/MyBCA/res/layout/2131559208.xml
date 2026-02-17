@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:gravity="end" android:id="@id/2131367195" android:padding="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/2132017466" 2130969338="2131365158" 2130969362="2131365158" />
-    <DatePicker android:id="@id/2131363345" android:paddingBottom="48.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:calendarViewShown="false" android:datePickerMode="spinner" />
-</LinearLayout>

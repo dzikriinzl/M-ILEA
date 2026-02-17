@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false" android:state_checked="true" android:tint="#ffcfcfcf" android:drawable="@drawable/2131231389" />
-    <item android:state_checked="false" android:state_selected="true" android:drawable="@drawable/2131231390" />
-    <item android:state_checked="true" android:drawable="@drawable/2131231389" />
-    <item android:state_checked="false" android:drawable="@drawable/2131231391" />
-</selector>

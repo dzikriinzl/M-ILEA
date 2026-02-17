@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "com.bca.mybca.omni.android.core";
-option java_multiple_files = true;
-
-message RoronaPreferences {
-  // bool represent the need to refresh state for each section
-  map<string, string> data = 1;
-}

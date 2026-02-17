@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:id="@id/2131363002" android:background="@drawable/2131231260" android:paddingTop="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff005caa" android:id="@id/2131367239" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/2132021832" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff005caa" android:id="@id/2131367240" android:paddingBottom="16.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/2132021826" android:layout_marginEnd="8.0dip" 2130969339="@id/2131364585" 2130969358="2131365158" 2130969361="@id/2131367239" />
-    <ImageView android:id="@id/2131364585" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@null" 2130969338="2131365158" 2130969362="@id/2131367240" />
-</o.retainAllInRangeruntime_release>

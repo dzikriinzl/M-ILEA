@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="20.0dip" android:layout_marginHorizontal="@dimen/2131165964" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.PayLaterViewModel_HiltModulesKeyModule android:id="@id/2131364449" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:adjustViewBounds="true" android:cropToPadding="true" 2130969358="2131365158" 2130969362="2131365158" 2130969652="@null" />
-</o.retainAllInRangeruntime_release>

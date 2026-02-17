@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:id="@id/2131364903" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" android:weightSum="2.0">
-        <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff797979" android:id="@id/2131367189" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textAllCaps="true" />
-        <o.FragmentPaylaterRegisterResultBinding android:textSize="15.0dip" android:textColor="#ff797979" android:gravity="end" android:id="@id/tv_value" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_weight="1.0" android:textAlignment="textEnd" android:layout_marginStart="10.0dip" />
-    </LinearLayout>
-    <View android:id="@id/2131367796" android:background="#ffebebeb" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-</LinearLayout>

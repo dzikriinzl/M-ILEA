@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:paddingTop="24.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:layout_gravity="center" android:id="@id/2131365809" android:background="@drawable/2131231304" android:layout_width="92.0dip" android:layout_height="8.0dip" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" />
-    <View android:layout_gravity="center" android:id="@id/2131365806" android:background="@drawable/2131231304" android:layout_width="160.0dip" android:layout_height="12.0dip" android:layout_marginTop="18.0dip" 2130969338="@id/2131365809" 2130969358="@id/2131365809" 2130969361="@id/2131365809" />
-    <View android:id="@id/2131365810" android:background="@drawable/2131231304" android:layout_width="118.0dip" android:layout_height="8.0dip" android:layout_marginTop="18.0dip" 2130969338="@id/2131365806" 2130969358="@id/2131365806" 2130969361="@id/2131365806" />
-    <View android:background="@drawable/2131231304" android:layout_width="118.0dip" android:layout_height="8.0dip" android:layout_marginTop="18.0dip" 2130969338="@id/2131365810" 2130969358="@id/2131365810" 2130969361="@id/2131365810" />
-    <View android:layout_gravity="right" android:id="@id/2131365807" android:background="@drawable/2131231304" android:layout_width="150.0dip" android:layout_height="8.0dip" android:layout_marginTop="72.0dip" android:layout_marginBottom="16.0dip" android:layout_marginEnd="16.0dip" 2130969332="2131365158" 2130969338="2131365158" />
-</o.retainAllInRangeruntime_release>

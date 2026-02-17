@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginHorizontal="@dimen/2131165964"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="12.0dip" android:textColor="#ff212529" android:layout_gravity="center_vertical" android:id="@id/2131363117" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="5.0dip" />
-    <o.FragmentPaylaterRegisterDataBinding android:textSize="14.0dip" android:textColor="#ff212529" android:layout_gravity="center_vertical" android:id="@id/2131363118" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:lineHeight="@dimen/2131165966" />
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:textColor="#ff212529" android:layout_gravity="center_vertical" android:id="@id/2131363119" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:lineHeight="@dimen/2131165966" />
-    <View android:id="@id/2131363116" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="20.0dip" />
-</LinearLayout>

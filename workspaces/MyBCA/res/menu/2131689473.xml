@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@null" android:id="@id/2131362092" android:orderInCategory="100" android:title="@string/2132019365" 2130969788="2131364227" />
-    <item android:icon="@null" android:id="@id/2131362202" android:orderInCategory="100" android:title="@string/2132017500" 2130969788="2131364227" />
-</menu>

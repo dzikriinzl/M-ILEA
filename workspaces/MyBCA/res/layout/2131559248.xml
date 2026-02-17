@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/2131364823" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="20.0dip" android:paddingEnd="20.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/2131364516" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@null" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff495057" android:gravity="center" android:id="@id/2131367170" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/2132019856" android:textAlignment="center" />
-    <o.LayoutPaylaterDashboardBinding android:textSize="12.0dip" android:textColor="#ff005caa" android:gravity="center" android:layout_gravity="center" android:id="@id/2131362763" android:background="@drawable/2131231381" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="32.0dip" android:layout_marginTop="24.0dip" android:minWidth="160.0dip" android:text="@string/2132017508" android:paddingHorizontal="@dimen/2131165964" />
-</LinearLayout>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.ShimmerMcaPocketWidgetBinding android:id="@id/2131365935" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <androidx.recyclerview.widget.RecyclerView android:id="@id/2131365561" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" 2130969318="androidx.recyclerview.widget.LinearLayoutManager" 2130969362="2131365158" />
-    </o.retainAllInRangeruntime_release>
-</o.ShimmerMcaPocketWidgetBinding>

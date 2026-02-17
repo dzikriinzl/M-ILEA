@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:id="@id/2131363020" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.PlnPrepaidPinFragment android:textColorHint="#ff0d5cab" android:id="@id/2131366321" android:layout_width="fill_parent" android:layout_height="wrap_content" 2130968578="1164" 2130969090="true" 2130969362="2131365158">
-        <o.PaychasePlnHistoryDetailViewModel android:textSize="16.0dip" android:id="@id/2131366163" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:lines="1" android:maxLength="36" android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789" android:inputType="text" />
-    </o.PlnPrepaidPinFragment>
-</o.retainAllInRangeruntime_release>

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "com.bca.mybca.omni.android.pocket";
-option java_multiple_files = true;
-
-message PocketPreferences {
-  // bool represent the need to refresh state for landing
-  bool refresh = 1;
-}

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_gravity="center" android:id="@id/2131362985" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginStart="2.0dip" android:layout_marginEnd="2.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/iv_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="fitCenter" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" />
-    <ImageView android:id="@id/2131364578" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@null" 2130969339="@id/iv_icon" 2130969358="@id/iv_icon" 2130969362="@id/iv_icon" />
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="12.0dip" android:textColor="#ff0d5cab" android:ellipsize="end" android:id="@id/2131367233" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:maxLines="2" android:lines="2" android:layout_below="@id/iv_icon" android:textAlignment="center" android:paddingStart="2.0dip" android:paddingEnd="2.0dip" android:layout_alignStart="@id/iv_icon" android:layout_alignEnd="@id/iv_icon" android:breakStrategy="simple" 2130969338="2131365158" 2130969358="2131365158" 2130969361="@id/iv_icon" />
-</o.retainAllInRangeruntime_release>

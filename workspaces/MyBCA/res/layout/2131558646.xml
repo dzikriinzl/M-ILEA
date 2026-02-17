@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:theme="@style/2132082987" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.setCoroutineContext android:theme="@style/2132082987" android:id="@id/2131363394" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingHorizontal="6.0dip" />
-</LinearLayout>

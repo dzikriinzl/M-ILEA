@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:paddingTop="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/2131364062" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.08" />
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/2131364064" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.92" />
-    <CheckBox android:theme="@style/2132083011" android:textSize="14.0dip" android:id="@id/2131362901" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/2131231441" 2130969358="@id/2131364062" 2130969362="2131365158" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff144e83" android:id="@id/2131367629" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="16.0dip" 2130969338="@id/2131364064" 2130969357="@id/2131362901" 2130969362="2131365158" />
-    <View android:background="#ffebebf2" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="20.0dip" 2130969361="@id/2131367629" />
-</o.retainAllInRangeruntime_release>

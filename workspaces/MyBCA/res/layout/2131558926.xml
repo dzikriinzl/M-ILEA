@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/2131166021" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/2131364060" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.44" />
-    <o.accessinvalidIteratorSet android:orientation="vertical" android:id="@id/2131364059" android:layout_width="wrap_content" android:layout_height="wrap_content" 2130969342="0.52" />
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff495057" android:ellipsize="end" android:id="@id/2131367009" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="2" 2130969338="@id/2131364060" 2130969358="2131365158" 2130969362="2131365158" />
-    <o.LayoutPaylaterRegisterKtpBinding android:textSize="14.0dip" android:textColor="#ff495057" android:gravity="end" android:id="@id/2131367008" android:layout_width="0.0dip" android:layout_height="wrap_content" 2130969338="2131365158" 2130969357="@id/2131364059" 2130969362="2131365158" />
-    <View android:id="@id/2131367852" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="20.0dip" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158" />
-</o.retainAllInRangeruntime_release>

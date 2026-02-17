@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:layout_width="8.0dip" android:layout_height="fill_parent" />
-    <ImageView android:id="@id/iv_chevron" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@null" android:layout_marginEnd="16.0dip" 2130970016="@color/2131100484" />
-    <o.setSupportProgressBarVisibility android:id="@id/2131362902" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/2131231397" />
-</LinearLayout>

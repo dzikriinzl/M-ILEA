@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.CallImpl android:id="@id/2131364771" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:paddingHorizontal="@dimen/2131165964" 2130968905="@layout/2131558610" 2130968921="2131362916" 2130968923="@dimen/2131165918" 2130968938="@dimen/2131165918" 2130969398="@layout/2131559399" 2130969803="false" />
-    <View android:id="@id/2131364763" android:background="#ffe9ecef" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginHorizontal="@dimen/2131165964" />
-</LinearLayout>

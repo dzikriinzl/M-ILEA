@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:orientation="vertical" android:background="#ffffffff" android:paddingTop="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="1.0dip" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/2131365475" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" 2130969362="2131365158">
-        <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ff005caa" android:gravity="center" android:id="@id/2131367341" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="36.0dip" android:layout_marginRight="36.0dip" android:text="@string/2132017976" android:layout_marginHorizontal="@dimen/2131165995" />
-        <o.FragmentPaylaterStatusFormBinding android:id="@id/2131362795" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/2132017894" android:layout_below="@id/2131367341" android:layout_centerHorizontal="true" android:stateListAnimator="@null" android:layout_marginVertical="@dimen/2131165964" android:paddingHorizontal="@dimen/2131165964" />
-    </RelativeLayout>
-</o.retainAllInRangeruntime_release>

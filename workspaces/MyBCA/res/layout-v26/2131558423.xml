@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.onWindowStartingSupportActionMode android:id="@id/2131363274" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/2131558420" />
-    <o.onStart android:gravity="top" android:id="@id/2131362041" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:touchscreenBlocksFocus="true" android:keyboardNavigationCluster="true" style="?2130968585">
-        <o.setDefaultActionButtonContentDescription android:id="@id/2131362039" android:layout_width="fill_parent" android:layout_height="wrap_content" 2130969583="@string/2132017155" style="?2130970038" />
-        <o.onSupportActionModeStarted android:theme="?2130968609" android:id="@id/2131362050" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?2130968608" />
-    </o.onStart>
-</o.onWindowStartingSupportActionMode>

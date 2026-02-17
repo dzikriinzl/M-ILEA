@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:background="@drawable/2131231236" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <o.FragmentPaylaterRegisterResultBinding android:textSize="14.0dip" android:textColor="#ffe9ecef" android:id="@id/2131367587" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="12.0dip" android:text="Oops.. Terjadi kesalahan, Silakan coba lagi" />
-</LinearLayout>

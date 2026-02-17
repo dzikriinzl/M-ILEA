@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<o.retainAllInRangeruntime_release android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:id="@id/2131362828" android:background="@drawable/2131231269" android:padding="4.0dip" android:layout_width="0.0dip" android:layout_height="44.0dip" 2130969338="2131365158" 2130969358="2131365158" 2130969362="2131365158">
-        <o.LayoutPaylaterRegisterKtpBinding android:enabled="true" android:textSize="15.0dip" android:textColor="@drawable/2131232747" android:gravity="center" android:id="@id/2131366046" android:background="@drawable/2131232746" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
-        <o.LayoutPaylaterRegisterKtpBinding android:enabled="true" android:textSize="15.0dip" android:textColor="@drawable/2131232747" android:gravity="center" android:id="@id/2131366049" android:background="@drawable/2131232746" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
-    </LinearLayout>
-</o.retainAllInRangeruntime_release>
