@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:text="@string/CommunicationHint" />
-    <Button android:textColor="@android:color/white" android:id="@id/httpButton" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:text="HTTP" />
-    <Button android:textColor="@android:color/white" android:id="@id/httpsButton" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:text="HTTPS" />
-    <Button android:textColor="@android:color/white" android:id="@id/PinningButton" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:text="Certificate Pinning - OkHttp3" />
-    <Button android:textColor="@android:color/white" android:id="@id/PinningButton1" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:text="Certificate Pinning - Native" />
-</LinearLayout>

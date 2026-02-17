@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:text="@string/QRXSSHint" />
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="45.0dip" android:layout_marginRight="15.0dip" android:text="Scan Product QR code to view the details" android:textAlignment="center" />
-    <com.budiyev.android.codescanner.CodeScannerView android:id="@id/scanner_view" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="250.0dip" />
-    <WebView android:id="@id/webviewxss" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" />
-</LinearLayout>

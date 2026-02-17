@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center" android:id="@id/imageView" android:fadingEdge="horizontal|vertical" android:layout_width="300.0dip" android:layout_height="300.0dip" android:layout_marginTop="120.0dip" android:foregroundGravity="center" app:srcCompat="@drawable/logo" />
-    <TextView android:textSize="15.0dip" android:textColor="@android:color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="by Satish Patnayak" />
-</LinearLayout>
